@@ -17,167 +17,167 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TourBookingWeb
 build_property.RootNamespace = TourBookingWeb
-build_property.ProjectDir = E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\
+build_property.ProjectDir = D:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\Tour-Booking-Web\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb
+build_property.MSBuildProjectDirectory = D:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\Tour-Booking-Web
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Areas/Admin/Views/Bookings/Edit.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Areas/Admin/Views/Bookings/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9va2luZ3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Areas/Admin/Views/Bookings/Index.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Areas/Admin/Views/Bookings/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9va2luZ3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Areas/Admin/Views/Categories/Create.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Areas/Admin/Views/Categories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Areas/Admin/Views/Categories/Edit.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Areas/Admin/Views/Categories/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Areas/Admin/Views/Categories/Index.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Areas/Admin/Views/Categories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Areas/Admin/Views/Home/Index.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Areas/Admin/Views/Report/Index.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Areas/Admin/Views/Report/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmVwb3J0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Areas/Admin/Views/Tour/Create.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Areas/Admin/Views/Tour/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVG91clxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Areas/Admin/Views/Tour/Edit.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Areas/Admin/Views/Tour/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVG91clxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Areas/Admin/Views/Tour/Index.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Areas/Admin/Views/Tour/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVG91clxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Areas/Admin/Views/Users/Details.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Areas/Admin/Views/Users/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlcnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Areas/Admin/Views/Users/Index.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Areas/Admin/Views/Users/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Areas/Admin/Views/Users/_UserListPartial.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Areas/Admin/Views/Users/_UserListPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlcnNcX1VzZXJMaXN0UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Areas/Admin/Views/_ViewImports.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Areas/Admin/Views/_ViewStart.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/Account/ForgotPassword.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/Account/Login.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/Account/MyOrders.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/Account/MyOrders.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxNeU9yZGVycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/Account/Profile.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/Account/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/Account/Register.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/Account/ResendEmailConfirmation.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/Account/ResendEmailConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNlbmRFbWFpbENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/Account/ResetPassword.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/Account/VerifyEmailCode.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/Account/VerifyEmailCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxWZXJpZnlFbWFpbENvZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/Account/VerifyResetCode.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/Account/VerifyResetCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxWZXJpZnlSZXNldENvZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/Booking/Booking.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/Booking/Booking.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xCb29raW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/Contact/Index.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/Home/Index.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/Home/Privacy.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/Shared/Error.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/Tour/Details.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/Tour/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/Tour/Index.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/Tour/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/_ViewImports.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/_ViewStart.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-7wegc2b8xe
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Areas/Admin/Views/Shared/_AdminNavbar.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Areas/Admin/Views/Shared/_AdminNavbar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbk5hdmJhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-arfmz5br3a
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Areas/Admin/Views/Shared/_AdminSidebar.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Areas/Admin/Views/Shared/_AdminSidebar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pblNpZGViYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-qiejeqhhg6
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-s05lfz6hqv
 
-[E:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/TourBookingWeb/Views/Shared/_Layout.cshtml]
+[D:/6. Đại học HKII - Năm 3/Công nghệ .Net/Cuối kì/Tour-Booking-Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-pml8jb1iq9
