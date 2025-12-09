@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Gửi lại email xác nhận";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Hero banner màu -->
+<div id="heroSlider" class="carousel slide mb-0 position-relative" data-bs-ride="carousel">
+    <!-- Static Text Overlay -->
+    <div class="position-absolute top-50 start-50 translate-middle text-center z-3 hero-text-overlay">
+        <h1 class="display-3 fw-bold mb-3 text-white">Gửi lại email </h1>
+    </div>
+
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="container-fluid hero-header" style="height: 200px; background: url('/img/background/bg1.jpg') center/cover no-repeat;"></div>
+        </div>
+        <div class="carousel-item">
+            <div class="container-fluid hero-header" style="height: 200px; background: url('/img/background/bg2.jpg') center/cover no-repeat;"></div>
+        </div>
+        <div class="carousel-item">
+            <div class="container-fluid hero-header" style="height: 200px; background: url('/img/background/bg3.jpg') center/cover no-repeat;"></div>
+        </div>
+    </div>
+</div>
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-sm rounded-3 border-0">
+                <div class="card-header bg-info text-white text-center py-3">
+                    <h4 class="mb-0">📧 Gửi lại xác nhận</h4>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="ResendEmailConfirmation" method="post">
+                        @Html.AntiForgeryToken()
+                        <div class="form-group mb-3">
+                            <label for="email">Email đã đăng ký</label>
+                            <input type="email" name="email" class="form-control" required />
+                        </div>
+                        <button type="submit" class="btn btn-info w-100 text-white">Gửi lại email</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <a asp-action="Login" class="text-decoration-none">🔐 Quay lại đăng nhập</a>
+                    </div>
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger mt-3">@Html.ValidationSummary()</div>
+                    }
+                    @if (TempData["Success"] != null)
+                    {
+                        <div class="alert alert-success mt-3">@TempData["Success"]</div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

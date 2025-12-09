@@ -1,0 +1,147 @@
+﻿@model TourBookingWeb.Models.ViewModels.BookingViewModel
+@{
+    ViewData["Title"] = "Đặt tour: " + Model.Tour?.Title;
+}
+
+<div id="heroSlider" class="carousel slide mb-0 position-relative" data-bs-ride="carousel">
+    <!-- Static Text Overlay -->
+    <div class="position-absolute top-50 start-50 translate-middle text-center z-3 hero-text-overlay">
+        <h1 class="display-3 text-white animated slideInDown">Đặt tour du lịch</h1>
+    </div>
+
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="container-fluid hero-header" style="height: 200px; background: url('/img/background/bg1.jpg') center/cover no-repeat;"></div>
+        </div>
+        <div class="carousel-item">
+            <div class="container-fluid hero-header" style="height: 200px; background: url('/img/background/bg2.jpg') center/cover no-repeat;"></div>
+        </div>
+        <div class="carousel-item">
+            <div class="container-fluid hero-header" style="height: 200px; background: url('/img/background/bg3.jpg') center/cover no-repeat;"></div>
+        </div>
+    </div>
+</div>
+
+<section class="container my-5">
+    <div class="row mb-4">
+        <div class="col-md-5">
+            <img src="~/@Model.Tour.Images.FirstOrDefault(i => i.DayNumber == 0)?.Url" class="img-fluid rounded shadow-sm" alt="Ảnh đại diện">
+        </div>
+        <div class="col-md-7">
+            <h3>@Model.Tour.Title</h3>
+            <p>@Model.Tour.Description</p>
+            <ul>
+                <li><strong>Mã tour:</strong> @Model.Tour.TourId</li>
+                <li><strong>Thời gian:</strong> @Model.Tour.Duration</li>
+                <li><strong>Giá người lớn:</strong> @Model.Tour.AdultPrice.ToString("n0") đ</li>
+                <li><strong>Điểm đến:</strong> @Model.Tour.Destination</li>
+                <li><strong>Phương tiện:</strong> @Model.Tour.Transport</li>
+            </ul>
+        </div>
+    </div>
+
+    <h4 class="mb-3"><i class="fa fa-tags"></i> BẢNG GIÁ TOUR CHI TIẾT</h4>
+    <table class="table table-bordered mb-5">
+        <thead><tr><th>Đối tượng</th><th>Giá</th></tr></thead>
+        <tbody>
+            <tr><td>Người lớn</td><td>@Model.AdultPrice.ToString("n0") đ</td></tr>
+            <tr><td>Trẻ em</td><td>@Model.ChildPrice.ToString("n0") đ</td></tr>
+        </tbody>
+    </table>
+
+    <form asp-action="Create" method="post" class="border rounded p-4 shadow-sm novalidate">
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.TourId)
+<input type="hidden" name="DepartureDate" value="@Model.DepartureDate" />
+        <h4 class="mb-3"><i class="fa fa-info-circle"></i> THÔNG TIN LIÊN HỆ</h4>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label asp-for="FullName" class="form-label">Họ tên *</label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Email" class="form-label">Email *</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label asp-for="Phone" class="form-label">Điện thoại *</label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Address" class="form-label">Địa chỉ *</label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label asp-for="SpecialRequest" class="form-label">Yêu cầu đặc biệt</label>
+            <textarea asp-for="SpecialRequest" class="form-control"></textarea>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label asp-for="AdultQuantity">Số người lớn *</label>
+                <input asp-for="AdultQuantity" class="form-control"/>
+                <span asp-validation-for="AdultQuantity" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="ChildQuantity">Số trẻ em</label>
+                <input asp-for="ChildQuantity" class="form-control" min="0" />
+                <span asp-validation-for="ChildQuantity" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Tổng tiền dự kiến</label>
+            <input type="text" id="totalPriceDisplay" class="form-control bg-light" readonly />
+        </div>
+
+        <h4 class="mb-3"><i class="fa fa-plane-departure"></i> NGÀY KHỞI HÀNH</h4>
+        <div class="mb-3">
+            <label>Ngày khởi hành bạn chọn:</label>
+            <input type="text" class="form-control" value="@Model.DepartureDate" readonly />
+        </div>
+
+        <h4 class="mb-3"><i class="fa fa-credit-card"></i> PHƯƠNG THỨC THANH TOÁN</h4>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" asp-for="PaymentMethod" value="Quầy" checked />
+            <label class="form-check-label">Thanh toán tại quầy</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" asp-for="PaymentMethod" value="MoMo" />
+            <label class="form-check-label">Ví MoMo</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" asp-for="PaymentMethod" value="VNPAY" />
+            <label class="form-check-label">VNPAY</label>
+        </div>
+        <span asp-validation-for="PaymentMethod" class="text-danger"></span>
+
+        <button type="submit" class="btn btn-success mt-4">Hoàn tất đặt tour</button>
+    </form>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        const adultPrice = parseFloat('@Model.AdultPrice') || 0;
+        const childPrice = parseFloat('@Model.ChildPrice') || 0;
+
+        function calculateTotal() {
+            const adults = parseInt(document.getElementById("AdultQuantity").value) || 0;
+            const children = parseInt(document.getElementById("ChildQuantity").value) || 0;
+            const total = (adults * adultPrice) + (children * childPrice);
+            document.getElementById("totalPriceDisplay").value = total.toLocaleString('vi-VN') + ' đ';
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("AdultQuantity").addEventListener("input", calculateTotal);
+            document.getElementById("ChildQuantity").addEventListener("input", calculateTotal);
+            calculateTotal();
+        });
+    </script>
+}

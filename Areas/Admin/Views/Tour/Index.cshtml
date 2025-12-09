@@ -1,0 +1,206 @@
+﻿@model X.PagedList.IPagedList<TourBookingWeb.Models.Tour>
+@inject TourBookingWeb.Data.TourDBContext _ctx
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+@{
+    ViewData["Title"] = "Danh sách tour";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">🧳 Danh sách tour</h2>
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="fas fa-plus-circle mr-1"></i> Thêm tour
+        </a>
+    </div>
+
+
+    <!-- Thanh tìm kiếm -->
+    <form method="get" class="row gx-3 gy-2 align-items-end mb-4">
+        <div class="col-md-3">
+            <label class="form-label">🔍 Tên tour</label>
+            <input type="text" name="keyword" value="@ViewBag.Keyword" class="form-control" placeholder="Nhập tên tour...">
+        </div>
+        <div class="col-md-2">
+            <label class="form-label">📂 Loại tour</label>
+            <select name="categoryId" class="form-select">
+                <option value="0">Tất cả loại tour</option>
+                @foreach (var cat in ViewBag.Categories as List<SelectListItem>)
+                {
+                    <option value="@cat.Value">@cat.Text</option>
+                }
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label class="form-label">📅 Ngày đi</label>
+            <input type="date" name="departureDate" value="@ViewBag.DepartureDate" class="form-control" placeholder="dd/mm/yyyy">
+        </div>
+        <div class="col-md-3">
+            <label class="form-label">🗺️ Điểm đến</label>
+            <input list="destList" name="destination" value="@ViewBag.Destination" class="form-control" placeholder="Chọn điểm đến...">
+            <datalist id="destList">
+                @foreach (var d in ViewBag.Destinations as List<string>)
+                {
+                    <option value="@d"></option>
+                }
+            </datalist>
+        </div>
+        <div class="col-md-2 d-grid">
+            <label class="form-label invisible">.</label>
+            <button type="button" class="btn btn-primary" onclick="fetchTours()">
+                <i class="fas fa-search"></i> Tìm tour
+            </button>
+        </div>
+    </form>
+
+
+
+
+    <div class="card shadow-sm border-0">
+        <div class="card-body p-0">
+            <table class="table table-hover table-striped table-bordered mb-0">
+                <thead class="thead-dark">
+                    <tr class="text-center text-white">
+                        <th>
+                            <a href="#" onclick="setSort('id')" class="text-white text-decoration-none">
+                                <span>ID</span>
+                                <i class="fas fa-sort"></i>
+                            </a>
+                        </th>
+                        <th>Ảnh</th>
+                        <th>
+                            <a href="#" onclick="setSort('title')" class="text-white text-decoration-none">
+                                <span>Tiêu đề</span>
+                                <i class="fas fa-sort"></i>
+                            </a>
+                        </th>
+                        <th>Điểm đến</th>
+                        <th>Thời gian</th>
+                        <th>Sức chứa</th>
+                        <th>Phương tiện</th>
+                        <th>
+                            <a href="#" onclick="setSort('price')" class="text-white text-decoration-none">
+                                <span>Giá người lớn</span>
+                                <i class="fas fa-sort"></i>
+                            </a>
+                        </th>
+                        <th>Giá trẻ em</th>
+                        <th>Khởi hành</th>
+                        <th style="width: 160px;">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div id="pagination" class="mt-3 d-flex justify-content-center"></div>
+
+
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        const keywordInput = document.querySelector("input[name='keyword']");
+        const categorySelect = document.querySelector("select[name='categoryId']");
+        const departureInput = document.querySelector("input[name='departureDate']");
+        const destinationInput = document.querySelector("input[name='destination']");
+        const tourTableBody = document.querySelector("tbody");
+        const pagination = document.getElementById("pagination");
+
+        let debounceTimer;
+        let currentSortOrder = "id_desc"; // giá trị mặc định
+
+        function setSort(sortKey) {
+            if (currentSortOrder === sortKey) {
+                currentSortOrder = sortKey + "_desc";
+            } else {
+                currentSortOrder = sortKey;
+            }
+            fetchTours(1); // gọi lại với sort mới
+        }
+
+
+        function fetchTours(page = 1) {
+            const keyword = keywordInput.value.trim();
+            const categoryId = categorySelect.value;
+            const departureDate = departureInput.value;
+            const destination = destinationInput.value.trim();
+
+            const url = `/Admin/Tour/SearchJson?keyword=${encodeURIComponent(keyword)}&categoryId=${categoryId}&departureDate=${departureDate}&destination=${encodeURIComponent(destination)}&page=${page}&sortOrder=${currentSortOrder}`;
+
+            fetch(url)
+                .then(res => res.json())
+                .then(result => {
+                    const data = result.data;
+                    const currentPage = result.currentPage;
+                    const totalPages = result.totalPages;
+
+                    tourTableBody.innerHTML = "";
+
+                    if (data.length === 0) {
+                        tourTableBody.innerHTML = `<tr><td colspan="11" class="text-center text-muted py-4">Không có tour nào được tìm thấy.</td></tr>`;
+                    } else {
+                        data.forEach(tour => {
+                            const row = `
+   <tr>
+    <td class="text-center">${tour.tourId}</td>
+    <td class="text-center">
+        <img src="/${tour.imageUrl}" style="width: 80px; height: 60px; object-fit: cover; border-radius: 5px;" />
+    </td>
+    <td>${tour.title}</td>
+    <td>${tour.destination}</td>
+    <td>${tour.duration}</td>
+    <td class="text-center">${tour.capacity}</td>
+    <td>${tour.transport}</td>
+    <td class="text-end">${Number(tour.adultPrice).toLocaleString()} đ</td>
+    <td class="text-end">${Number(tour.childPrice).toLocaleString()} đ</td>
+    <td>
+        <span>${tour.departureDate}</span>
+        <small class="text-muted d-block">(${tour.remainingSlot} chỗ)</small>
+    </td>
+    <td class="text-nowrap text-center">
+        <a href="/Admin/Tour/Edit/${tour.tourId}" class="btn btn-sm btn-warning mb-1"><i class="fas fa-edit"></i> Sửa</a>
+        <a href="/Admin/Tour/Delete/${tour.tourId}" class="btn btn-sm btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa tour này?');"><i class="fas fa-trash-alt"></i> Xóa</a>
+    </td>
+</tr>`;
+                            tourTableBody.innerHTML += row;
+                        });
+                    }
+
+                    renderPagination(currentPage, totalPages);
+                });
+        }
+
+        function renderPagination(currentPage, totalPages) {
+            pagination.innerHTML = "";
+
+            if (totalPages <= 1) return;
+
+            let html = `<nav><ul class="pagination">`;
+            for (let i = 1; i <= totalPages; i++) {
+                html += `<li class="page-item ${i === currentPage ? 'active' : ''}">
+                            <a href="#" class="page-link" data-page="${i}">${i}</a>
+                        </li>`;
+            }
+            html += `</ul></nav>`;
+            pagination.innerHTML = html;
+
+            pagination.querySelectorAll("a.page-link").forEach(link => {
+                link.addEventListener("click", e => {
+                    e.preventDefault();
+                    const page = parseInt(link.dataset.page);
+                    fetchTours(page);
+                });
+            });
+        }
+
+        [keywordInput, categorySelect, departureInput, destinationInput].forEach(el => {
+            el.addEventListener("input", () => {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(() => fetchTours(1), 500);
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => fetchTours(1));
+    </script>
+}

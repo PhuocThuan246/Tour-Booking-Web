@@ -1,0 +1,81 @@
+﻿@model TourBookingWeb.Models.Booking
+@{
+    ViewData["Title"] = "Chỉnh sửa Đơn đặt tour";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    var users = ViewBag.Users as List<TourBookingWeb.Models.User>;
+    var tours = ViewBag.Tours as List<TourBookingWeb.Models.Tour>;
+    var schedules = ViewBag.Schedules as List<TourBookingWeb.Models.TourSchedule>;
+}
+
+<h2 class="mb-4">✏️ Chỉnh sửa Booking</h2>
+
+<form asp-action="Edit" method="post" class="border p-4 shadow-sm">
+    <input type="hidden" asp-for="BookingId" />
+
+    <!-- Người đặt: nhập tên -->
+    <div class="mb-3">
+        <label class="form-label">Người đặt (Họ tên)</label>
+        <input type="text" name="UserFullName" class="form-control" value="@Model.User?.FullName" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" name="UserEmail" class="form-control" value="@Model.User?.Email" readonly />
+    </div>
+
+    <!-- Lịch khởi hành -->
+    <div class="mb-3">
+        <label class="form-label">Lịch khởi hành</label>
+        <select class="form-select" asp-for="TourScheduleId" required>
+            @foreach (var s in schedules)
+            {
+                <option value="@s.TourScheduleId" selected="@(s.TourScheduleId == Model.TourScheduleId)">
+                    @s.DepartureDate.ToString("dd/MM/yyyy") - Còn lại: @s.RemainingSlot
+                </option>
+            }
+        </select>
+    </div>
+
+    <!-- Ngày đặt -->
+    <div class="mb-3">
+        <label class="form-label">Ngày đặt</label>
+        <input asp-for="BookingDate" class="form-control" type="datetime-local" value="@Model.BookingDate.ToString("yyyy-MM-ddTHH:mm")" />
+    </div>
+
+    <!-- Số người lớn / trẻ em -->
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label class="form-label">Số người lớn</label>
+            <input asp-for="AdultQuantity" class="form-control" />
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Số trẻ em</label>
+            <input asp-for="ChildQuantity" class="form-control" />
+        </div>
+    </div>
+
+    <!-- Yêu cầu -->
+    <div class="mb-3">
+        <label class="form-label">Yêu cầu đặc biệt</label>
+        <textarea asp-for="SpecialRequest" class="form-control"></textarea>
+    </div>
+
+    <!-- Phương thức thanh toán: dropdown -->
+    <div class="mb-3">
+        <label class="form-label">Phương thức thanh toán</label>
+        <select class="form-select" asp-for="PaymentMethod">
+            <option value="Quầy" selected="@(Model.PaymentMethod == "Quầy")">Thanh toán tại quầy</option>
+            <option value="VNPAY" selected="@(Model.PaymentMethod == "VNPAY")">VNPAY</option>
+            <option value="VNPAY" selected="@(Model.PaymentMethod == "Ví MoMo")">Ví MoMo</option>
+        </select>
+    </div>
+
+    <!-- Tổng tiền -->
+    <div class="mb-3">
+        <label class="form-label">Tổng tiền</label>
+        <input asp-for="TotalPrice" class="form-control" readonly />
+    </div>
+
+    <button type="submit" class="btn btn-primary">💾 Lưu thay đổi</button>
+    <a asp-action="Index" class="btn btn-secondary">↩️ Quay lại</a>
+</form>
+

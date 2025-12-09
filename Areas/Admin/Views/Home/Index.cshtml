@@ -1,0 +1,93 @@
+﻿@* Areas/Admin/Views/Home/Index.cshtml *@
+@{
+    ViewData["Title"] = "Trang Admin Dashboard";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container-fluid py-4">
+    <h1 class="mb-4 text-center text-dark">🎯 Chào mừng đến với Trang Quản Trị</h1>
+
+    <div class="row g-4">
+        <div class="col-12 col-md-6 col-xl-4 mb-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body d-flex flex-column align-items-center text-center">
+                    <div class="bg-primary text-white rounded-circle mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                        <i class="fas fa-folder-open fa-2x"></i>
+                    </div>
+                    <h5 class="card-title mb-2">Quản lý Loại Tour</h5>
+                    <p class="card-text text-muted small">Xem và chỉnh sửa các danh mục tour du lịch.</p>
+                    <a asp-area="Admin" asp-controller="Categories" asp-action="Index" class="btn btn-primary btn-sm mt-auto">Truy cập</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-4 mb-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body d-flex flex-column align-items-center text-center">
+                    <div class="bg-success text-white rounded-circle mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                        <i class="fas fa-suitcase-rolling fa-2x"></i>
+                    </div>
+                    <h5 class="card-title mb-2">Quản lý Tour</h5>
+                    <p class="card-text text-muted small">Thêm, sửa hoặc xóa các tour du lịch.</p>
+                    <a asp-area="Admin" asp-controller="Tour" asp-action="Index" class="btn btn-success btn-sm mt-auto">Truy cập</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-4 mb-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body d-flex flex-column align-items-center text-center">
+                    <div class="bg-danger text-white rounded-circle mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                        <i class="fas fa-file-invoice fa-2x"></i>
+                    </div>
+                    <h5 class="card-title mb-2">Quản lý Booking</h5>
+                    <p class="card-text text-muted small">Xem, sửa và xoá các đơn đặt tour.</p>
+                    <a asp-area="Admin" asp-controller="Bookings" asp-action="Index" class="btn btn-danger btn-sm mt-auto">Truy cập</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-12 col-md-6 col-xl-4 mb-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body d-flex flex-column align-items-center text-center">
+                    <div class="bg-secondary text-white rounded-circle mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                        <i class="fas fa-users fa-2x"></i>
+                    </div>
+                    <h5 class="card-title mb-2">Quản lý khách hàng</h5>
+                    <p class="card-text text-muted small">Xem và xoá tài khoản người dùng hệ thống.</p>
+                    <a asp-area="Admin" asp-controller="Users" asp-action="Index" class="btn btn-secondary btn-sm mt-auto">Truy cập</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xl-4 mb-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body d-flex flex-column align-items-center text-center">
+                    <div class="bg-info text-white rounded-circle mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                        <i class="fas fa-chart-bar fa-2x"></i>
+                    </div>
+                    <h5 class="card-title mb-2">Báo cáo thống kê</h5>
+                    <p class="card-text text-muted small">Xem tổng doanh thu, số lượt đặt tour, thống kê tổng quan.</p>
+                    <a asp-area="Admin" asp-controller="Report" asp-action="Index" class="btn btn-info btn-sm mt-auto">Truy cập</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-12 col-md-6 col-xl-4 mb-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body d-flex flex-column align-items-center text-center">
+                    <div class="bg-warning text-white rounded-circle mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                        <i class="fas fa-cogs fa-2x"></i>
+                    </div>
+                    <h5 class="card-title mb-2">Cài đặt hệ thống</h5>
+                    <p class="card-text text-muted small">Quản lý các cài đặt chung của hệ thống.</p>
+                    <a href="#" class="btn btn-warning btn-sm mt-auto disabled">Đang phát triển</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

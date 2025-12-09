@@ -1,0 +1,79 @@
+﻿@model TourBookingWeb.Models.User
+@{
+    ViewData["Title"] = "Tài khoản";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Hero banner màu -->
+<div id="heroSlider" class="carousel slide mb-0 position-relative" data-bs-ride="carousel">
+    <!-- Static Text Overlay -->
+    <div class="position-absolute top-50 start-50 translate-middle text-center z-3 hero-text-overlay">
+        <h1 class="display-3 fw-bold mb-3 text-white">Thông tin tài khoản</h1>
+    </div>
+
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="container-fluid hero-header" style="height: 300px; background: url('/img/background/bg1.jpg') center/cover no-repeat;"></div>
+        </div>
+        <div class="carousel-item">
+            <div class="container-fluid hero-header" style="height: 300px; background: url('/img/background/bg2.jpg') center/cover no-repeat;"></div>
+        </div>
+        <div class="carousel-item">
+            <div class="container-fluid hero-header" style="height: 300px; background: url('/img/background/bg3.jpg') center/cover no-repeat;"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <div class="fw-bold">@Model.Email</div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <a asp-action="Profile" class="list-group-item @(ViewData["Title"]!.ToString()=="Tài khoản" ? "text-primary" : "")">
+                        <i class="fas fa-user me-1"></i> Hồ sơ cá nhân
+                    </a>
+                    <a asp-action="MyOrders" class="list-group-item @(ViewData["Title"]!.ToString().Contains("Đơn hàng") ? "text-primary" : "")">
+                        <i class="fas fa-receipt me-1"></i> Đơn hàng của tôi
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Form hồ sơ -->
+        <div class="col-md-9">
+            <div class="card shadow-sm p-4">
+                <h4>Thông tin tài khoản</h4>
+
+                @if (TempData["Success"] != null)
+                {
+                    <div class="alert alert-success">@TempData["Success"]</div>
+                }
+
+                <form asp-action="Profile" method="post">
+                    @Html.AntiForgeryToken()
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input asp-for="Email" class="form-control" readonly />
+                    </div>
+                    <div class="mb-3">
+                        <label>Họ và tên</label>
+                        <input asp-for="FullName" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label>Số điện thoại</label>
+                        <input asp-for="Phone" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label>Địa chỉ</label>
+                        <input asp-for="Address" class="form-control" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

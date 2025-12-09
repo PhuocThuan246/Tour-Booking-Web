@@ -1,0 +1,93 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\6. \u0110\u1EA1i h\u1ECDc HKII - N\u0103m 3\\C\u00F4ng ngh\u1EC7 .Net\\Cu\u1ED1i k\u00EC\\TourBookingWeb\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{89FF9F71-3D30-4941-A7FA-F07D50EBAD3F}|TourBookingWeb.csproj|e:\\6. \u0111\u1EA1i h\u1ECDc hkii - n\u0103m 3\\c\u00F4ng ngh\u1EC7 .net\\cu\u1ED1i k\u00EC\\tourbookingweb\\areas\\admin\\views\\report\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{89FF9F71-3D30-4941-A7FA-F07D50EBAD3F}|TourBookingWeb.csproj|solutionrelative:areas\\admin\\views\\report\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89FF9F71-3D30-4941-A7FA-F07D50EBAD3F}|TourBookingWeb.csproj|e:\\6. \u0111\u1EA1i h\u1ECDc hkii - n\u0103m 3\\c\u00F4ng ngh\u1EC7 .net\\cu\u1ED1i k\u00EC\\tourbookingweb\\areas\\admin\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89FF9F71-3D30-4941-A7FA-F07D50EBAD3F}|TourBookingWeb.csproj|solutionrelative:areas\\admin\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89FF9F71-3D30-4941-A7FA-F07D50EBAD3F}|TourBookingWeb.csproj|e:\\6. \u0111\u1EA1i h\u1ECDc hkii - n\u0103m 3\\c\u00F4ng ngh\u1EC7 .net\\cu\u1ED1i k\u00EC\\tourbookingweb\\controllers\\tourcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89FF9F71-3D30-4941-A7FA-F07D50EBAD3F}|TourBookingWeb.csproj|solutionrelative:controllers\\tourcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89FF9F71-3D30-4941-A7FA-F07D50EBAD3F}|TourBookingWeb.csproj|e:\\6. \u0111\u1EA1i h\u1ECDc hkii - n\u0103m 3\\c\u00F4ng ngh\u1EC7 .net\\cu\u1ED1i k\u00EC\\tourbookingweb\\areas\\admin\\controllers\\tourcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89FF9F71-3D30-4941-A7FA-F07D50EBAD3F}|TourBookingWeb.csproj|solutionrelative:areas\\admin\\controllers\\tourcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\6. \u0110\u1EA1i h\u1ECDc HKII - N\u0103m 3\\C\u00F4ng ngh\u1EC7 .Net\\Cu\u1ED1i k\u00EC\\TourBookingWeb\\Areas\\Admin\\Views\\Report\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Report\\Index.cshtml",
+              "ToolTip": "E:\\6. \u0110\u1EA1i h\u1ECDc HKII - N\u0103m 3\\C\u00F4ng ngh\u1EC7 .Net\\Cu\u1ED1i k\u00EC\\TourBookingWeb\\Areas\\Admin\\Views\\Report\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Report\\Index.cshtml",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-14T03:17:34.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ReportController.cs",
+              "DocumentMoniker": "E:\\6. \u0110\u1EA1i h\u1ECDc HKII - N\u0103m 3\\C\u00F4ng ngh\u1EC7 .Net\\Cu\u1ED1i k\u00EC\\TourBookingWeb\\Areas\\Admin\\Controllers\\ReportController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\ReportController.cs",
+              "ToolTip": "E:\\6. \u0110\u1EA1i h\u1ECDc HKII - N\u0103m 3\\C\u00F4ng ngh\u1EC7 .Net\\Cu\u1ED1i k\u00EC\\TourBookingWeb\\Areas\\Admin\\Controllers\\ReportController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\ReportController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T03:17:14.234Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TourController.cs",
+              "DocumentMoniker": "E:\\6. \u0110\u1EA1i h\u1ECDc HKII - N\u0103m 3\\C\u00F4ng ngh\u1EC7 .Net\\Cu\u1ED1i k\u00EC\\TourBookingWeb\\Controllers\\TourController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TourController.cs",
+              "ToolTip": "E:\\6. \u0110\u1EA1i h\u1ECDc HKII - N\u0103m 3\\C\u00F4ng ngh\u1EC7 .Net\\Cu\u1ED1i k\u00EC\\TourBookingWeb\\Controllers\\TourController.cs",
+              "RelativeToolTip": "Controllers\\TourController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T03:16:23.266Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TourController.cs",
+              "DocumentMoniker": "E:\\6. \u0110\u1EA1i h\u1ECDc HKII - N\u0103m 3\\C\u00F4ng ngh\u1EC7 .Net\\Cu\u1ED1i k\u00EC\\TourBookingWeb\\Areas\\Admin\\Controllers\\TourController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\TourController.cs",
+              "ToolTip": "E:\\6. \u0110\u1EA1i h\u1ECDc HKII - N\u0103m 3\\C\u00F4ng ngh\u1EC7 .Net\\Cu\u1ED1i k\u00EC\\TourBookingWeb\\Areas\\Admin\\Controllers\\TourController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\TourController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T17:42:42.445Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

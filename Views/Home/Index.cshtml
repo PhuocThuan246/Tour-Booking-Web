@@ -1,0 +1,322 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Hero Header Start -->
+<!-- Hero Slider with Fixed Text and Changing Background -->
+<div id="heroSlider" class="carousel slide mb-0 position-relative" data-bs-ride="carousel">
+    <!-- Static Text Overlay -->
+    <div class="position-absolute top-50 start-50 translate-middle text-center z-3 hero-text-overlay">
+        <h1 class="display-3 fw-bold mb-3 text-white">Khám phá thế giới cùng chúng tôi</h1>
+        <p class="lead text-white">Tour hấp dẫn – Trải nghiệm tuyệt vời – Giá cả hợp lý</p>
+        <a href="/Tour" class="btn btn-success px-4 py-2 me-2">🧭 Xem tour</a>
+        <a href="/Contact" class="btn btn-outline-light px-4 py-2">📞 Liên hệ ngay</a>
+    </div>
+
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="container-fluid hero-header" style="height: 300px; background: url('/img/background/bg1.jpg') center/cover no-repeat;"></div>
+        </div>
+        <div class="carousel-item">
+            <div class="container-fluid hero-header" style="height: 300px; background: url('/img/background/bg2.jpg') center/cover no-repeat;"></div>
+        </div>
+        <div class="carousel-item">
+            <div class="container-fluid hero-header" style="height: 300px; background: url('/img/background/bg3.jpg') center/cover no-repeat;"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Hero Header End -->
+<!-- Tour nổi bật -->
+<section class="container py-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold">🌟 Tour Nổi Bật</h2>
+        <p class="text-muted">Những hành trình được yêu thích nhất</p>
+    </div>
+
+    <div id="featuredToursCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="/img/tours/12/1.jpg" class="card-img-top" alt="Tour Đà Lạt">
+                            <div class="card-body">
+                                <h5 class="card-title">Tour Đà Lạt 3N2Đ</h5>
+                                <p class="card-text text-muted">Đà Lạt – thành phố ngàn hoa, luôn mê hoặc du khách bởi tiết trời se lạnh quanh năm</p>
+                                <a href="/Tour/Details/12" class="btn btn-primary">📅 Đặt ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="/img/tours/29/1.jpg" class="card-img-top" alt="Tour Nha Trang">
+                            <div class="card-body">
+                                <h5 class="card-title">Tour Trung Quốc 5N4Đ – Bắc Kinh – Vạn Lý Trường Thành</h5>
+                                <p class="card-text text-muted">Tham quan thủ đô Bắc Kinh, quảng trường Thiên An Môn.</p>
+                                <a href="/Tour/Details/29" class="btn btn-primary">📅 Đặt ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="/img/tours/1/5.jpg" class="card-img-top" alt="Tour Hà Giang">
+                            <div class="card-body">
+                                <h5 class="card-title">Tour Hà Giang mùa hoa tam giác mạch 3N2Đ</h5>
+                                <p class="card-text text-muted">Chinh phục Mã Pí Lèng, mùa hoa tam giác mạch</p>
+                                <a href="/Tour/Details/1" class="btn btn-primary">📅 Đặt ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="/img/tours/22/1.jpg" class="card-img-top" alt="Tour Huế">
+                            <div class="card-body">
+                                <h5 class="card-title">Tour Huế - Đà Nẵng - Hội An 4N3Đ</h5>
+                                <p class="card-text text-muted">Thành phố cổ kính bên dòng Hương</p>
+                                <a href="/Tour/Details/22" class="btn btn-primary">📅 Đặt ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="/img/tours/31/1.jpg" class="card-img-top" alt="Tour Sapa">
+                            <div class="card-body">
+                                <h5 class="card-title">Tour Malaysia 4N3Đ – Kuala Lumpur – Genting</h5>
+                                <p class="card-text text-muted">Tham quan tháp đôi Petronas, cao nguyên Genting, động Batu</p>
+                                <a href="/Tour/Details/31" class="btn btn-primary">📅 Đặt ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm h-100">
+                            <img src="/img/tours/11/1.jpg" class="card-img-top" alt="Tour Phú Quốc">
+                            <div class="card-body">
+                                <h5 class="card-title">Tour Phú Quốc 4N3Đ - Thiên đường nghỉ dưỡng</h5>
+                                <p class="card-text text-muted">Thiên đường biển đảo – Nghỉ dưỡng cao cấp</p>
+                                <a href="/Tour/Details/11" class="btn btn-primary">📅 Đặt ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Điều khiển -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#featuredToursCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#featuredToursCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<style>
+    /* Loại bỏ biểu tượng mặc định và nền xám */
+    #featuredToursCarousel .custom-carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        z-index: 10;
+    }
+
+    #featuredToursCarousel .custom-carousel-btn i {
+        font-size: 32px;
+        color: #444;
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+    }
+
+    #featuredToursCarousel .custom-carousel-btn i:hover {
+        opacity: 1;
+        color: #000;
+    }
+
+    #featuredToursCarousel .carousel-control-prev {
+        left: -40px;
+    }
+
+    #featuredToursCarousel .carousel-control-next {
+        right: -40px;
+    }
+
+
+</style>
+
+
+
+
+
+
+<section class="container py-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold">🌟 Tại sao chọn chúng tôi?</h2>
+        <p class="text-muted">Cam kết mang đến trải nghiệm hoàn hảo cho bạn</p>
+    </div>
+    <div class="row g-4 text-center">
+        <div class="col-md-3">
+            <i class="fas fa-star fa-2x text-primary mb-3"></i>
+            <h5 class="fw-bold">Dịch vụ 5⭐</h5>
+            <p class="text-muted">Cam kết chất lượng từ chỗ ở đến phương tiện</p>
+        </div>
+        <div class="col-md-3">
+            <i class="fas fa-dollar-sign fa-2x text-success mb-3"></i>
+            <h5 class="fw-bold">Giá cả cạnh tranh</h5>
+            <p class="text-muted">Không phát sinh chi phí ẩn, minh bạch rõ ràng</p>
+        </div>
+        <div class="col-md-3">
+            <i class="fas fa-headset fa-2x text-warning mb-3"></i>
+            <h5 class="fw-bold">Hỗ trợ tận tâm</h5>
+            <p class="text-muted">Tư vấn 24/7, xử lý nhanh mọi yêu cầu</p>
+        </div>
+        <div class="col-md-3">
+            <i class="fas fa-globe fa-2x text-info mb-3"></i>
+            <h5 class="fw-bold">Mạng lưới toàn quốc</h5>
+            <p class="text-muted">Hơn 100 đối tác & điểm đến trong và ngoài nước</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="container py-5">
+    <div class="row g-5 align-items-center">
+        <!-- Tiêu đề trước hình ảnh -->
+        <div class="col-md-5">
+            <div class="text-center mb-4">
+                <h2 class="fw-bold">Trải Nghiệm Du Lịch Tuyệt Đỉnh Mang Đến Sự Khác Biệt Cho Công Ty Chúng Tôi</h2>
+            </div>
+
+            <div class="bg-light p-4 rounded shadow-sm text-center">
+                <img src="/img/tours/tourist/tourist.jpg" class="img-fluid rounded mb-3" alt="Du lịch">
+                <div class="d-flex justify-content-center align-items-center mb-3">
+                    <img src="/img/background/bg10.jpg" class="rounded-circle me-2" style="width: 30px; height: 30px;">
+                    <span class="badge bg-warning text-dark">4k+ đánh giá</span>
+                </div>
+                <p class="fw-bold mb-1">850K+ Khách hàng hài lòng</p>
+                <span class="badge bg-success">5+ Năm kinh nghiệm</span>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card shadow-sm text-center border-0 h-100 p-4 rounded-3">
+                        <i class="fas fa-mountain fa-2x text-success mb-3"></i>
+                        <h6 class="fw-bold">Chinh Phục Cảnh Quan Việt Nam</h6>
+                        <p class="text-muted small">Khám phá những cảnh đẹp hùng vĩ và tuyệt vời của đất nước Việt Nam.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card shadow-sm text-center border-0 h-100 p-4 rounded-3">
+                        <i class="fas fa-landmark fa-2x text-primary mb-3"></i>
+                        <h6 class="fw-bold">Khám Phá Di Sản Việt Nam</h6>
+                        <p class="text-muted small">Khám phá các di sản thế giới và những kỳ quan thiên nhiên nổi tiếng.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card shadow-sm text-center border-0 h-100 p-4 rounded-3">
+                        <i class="fas fa-theater-masks fa-2x text-warning mb-3"></i>
+                        <h6 class="fw-bold">Trải Nghiệm Đặc Sắc Việt Nam</h6>
+                        <p class="text-muted small">Trải nghiệm những hoạt động và lễ hội đặc trưng của văn hóa Việt.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card shadow-sm text-center border-0 h-100 p-4 rounded-3">
+                        <i class="fas fa-tree fa-2x text-success mb-3"></i>
+                        <h6 class="fw-bold">Vẻ Đẹp Thiên Nhiên Việt</h6>
+                        <p class="text-muted small">Chinh phục vẻ đẹp tự nhiên hoang sơ và kỳ vĩ của Việt Nam.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<!-- Giới thiệu -->
+<<section class="container py-5 bg-light rounded-3">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-dark">🌍 Về Chúng Tôi</h2>
+        <p class="text-muted">Mang đến cho bạn những hành trình đáng nhớ và an tâm</p>
+    </div>
+    <div class="row text-center g-4">
+        <div class="col-md-4">
+            <div class="p-4 bg-white rounded shadow-sm h-100">
+                <i class="fas fa-map-marked-alt fa-3x text-success mb-3"></i>
+                <h5 class="fw-bold text-dark">Địa điểm hấp dẫn</h5>
+                <p class="text-muted">Chọn lọc các điểm đến nổi bật trong và ngoài nước.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 bg-white rounded shadow-sm h-100">
+                <i class="fas fa-headset fa-3x text-primary mb-3"></i>
+                <h5 class="fw-bold text-dark">Hỗ trợ tận tâm</h5>
+                <p class="text-muted">Tư vấn viên thân thiện, hỗ trợ 24/7 xuyên suốt hành trình.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 bg-white rounded shadow-sm h-100">
+                <i class="fas fa-wallet fa-3x text-warning mb-3"></i>
+                <h5 class="fw-bold text-dark">Chi phí hợp lý</h5>
+                <p class="text-muted">Giá tour tối ưu, minh bạch, phù hợp ngân sách của bạn.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- CTA Section Start -->
+<section class="container py-5">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card bg-dark text-white border-0 shadow-sm h-100" style="background: url('/img/background/bg8.jpg') center center/cover no-repeat;">
+                <div class="card-body d-flex flex-column justify-content-end" style="height: 300px; background: rgba(0,0,0,0.4);">
+                    <small class="text-warning">Khám Phá Vẻ Đẹp Văn Hóa Việt</small>
+                    <h5 class="card-title fw-bold">Tìm hiểu những giá trị văn hóa độc đáo của các vùng miền Việt Nam.</h5>
+                    <a href="/Tour" class="btn btn-warning mt-3 w-50">Khám Phá <i class="fas fa-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-dark text-white border-0 shadow-sm h-100" style="background: url('/img/background/bg6.jpg') center center/cover no-repeat;">
+                <div class="card-body d-flex flex-column justify-content-end" style="height: 300px; background: rgba(0,0,0,0.4);">
+                    <small class="text-success">Bãi biển Sea</small>
+                    <h5 class="card-title fw-bold">Bãi trong xanh dạt dào ở Việt Nam</h5>
+                    <a href="/Tour" class="btn btn-success mt-3 w-50">Khám Phá <i class="fas fa-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-dark text-white border-0 shadow-sm h-100" style="background: url('/img/background/bg7.jpg') center center/cover no-repeat;">
+                <div class="card-body d-flex flex-column justify-content-end" style="height: 300px; background: rgba(0,0,0,0.4);">
+                    <small class="text-light">Thác nước</small>
+                    <h5 class="card-title fw-bold">Thác nước lớn nhất Việt Nam</h5>
+                    <a href="/Tour" class="btn btn-light mt-3 w-50 text-dark">Khám Phá <i class="fas fa-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

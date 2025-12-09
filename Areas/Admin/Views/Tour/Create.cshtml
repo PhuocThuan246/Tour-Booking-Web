@@ -1,0 +1,209 @@
+﻿@model TourBookingWeb.Models.Tour
+@{
+    ViewData["Title"] = "Thêm tour";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+    
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="mb-0">🧳 Thêm tour mới</h2>
+            <a asp-action="Index" class="btn btn-outline-secondary">
+                <i class="fas fa-arrow-left mr-1"></i> Quay lại
+            </a>
+        </div>
+
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+                <form asp-action="Create" method="post" enctype="multipart/form-data">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        <label asp-for="Title"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="CategoryId"></label>
+                        <select asp-for="CategoryId" asp-items="ViewBag.CategoryList" class="form-control"></select>
+                        <span asp-validation-for="CategoryId" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ảnh đại diện tour</label>
+                        <input type="file" name="CoverImage" id="CoverImage" class="form-control-file" />
+                        <span class="text-danger small" id="coverError">
+                            @ViewData.ModelState["CoverImage"]?.Errors.FirstOrDefault()?.ErrorMessage
+                        </span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label asp-for="Description"></label>
+                        <textarea asp-for="Description" class="form-control" rows="2"></textarea>
+                        <span asp-validation-for="Description" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Itinerary"></label>
+                        <textarea id="Itinerary" asp-for="Itinerary" class="form-control" rows="10" placeholder="Ngày 1: Thăm Văn Miếu, Hồ Hoàn Kiếm&#10;Ngày 2: Du thuyền vịnh Hạ Long&#10;Ngày 3: Tham quan Đồ Sơn, chợ Đổ"></textarea>
+
+                        <span asp-validation-for="Itinerary" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="AdultPrice"></label>
+                            <input asp-for="AdultPrice" class="form-control" />
+                            <span asp-validation-for="AdultPrice" class="text-danger small"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="ChildPrice"></label>
+                            <input asp-for="ChildPrice" class="form-control" />
+                            <span asp-validation-for="ChildPrice" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Capacity"></label>
+                        <input asp-for="Capacity" class="form-control" />
+                        <span asp-validation-for="Capacity" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Duration"></label>
+                        <input asp-for="Duration" class="form-control" />
+                        <span asp-validation-for="Duration" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>🛫 Danh sách lịch khởi hành</label>
+                        <div id="departureList"></div>
+
+                        <button type="button" class="btn btn-outline-primary mt-2" onclick="addDeparture()">➕ Thêm lịch trình</button>
+                        <div id="departureError" class="text-danger small mt-2"></div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label asp-for="Transport"></label>
+                        <input asp-for="Transport" class="form-control" />
+                        <span asp-validation-for="Transport" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Destination"></label>
+                        <input asp-for="Destination" class="form-control" />
+                        <span asp-validation-for="Destination" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Số ảnh cho từng ngày</label>
+                        <select id="dayCount" name="DayCount" class="form-control" onchange="generateDayImages()">
+                            @for (int i = 1; i <= 10; i++)
+                            {
+                                <option value="@i">@i ngày</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div id="dayImagesContainer"></div>
+
+
+                    <div class="card-footer d-flex justify-content-end mt-4">
+                        <!-- thêm id="btnSave" để bắt sự kiện click -->
+                        <button type="submit" id="btnSave" class="btn btn-primary">
+                            <i class="fas fa-save mr-1"></i> Lưu
+                        </button>
+
+                        <a asp-action="Index" class="btn btn-secondary ml-2">Huỷ</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        function generateDayImages() {
+            const count = parseInt(document.getElementById("dayCount").value);
+            const container = document.getElementById("dayImagesContainer");
+            container.innerHTML = "";
+
+            for (let i = 1; i <= count; i++) {
+                container.innerHTML += `
+                            <div class="form-group border rounded p-3 mb-3 bg-light">
+                                <label><strong>Ảnh minh họa ngày ${i}</strong></label>
+                                <input type="file" name="DayImages" class="form-control-file" />
+                            </div>
+                        `;
+                    }
+        } 
+            document.addEventListener("DOMContentLoaded", function () {
+                generateDayImages();
+        });
+        /* ---------- FORM NGÀY KHỞI HÀNH ---------- */
+        function addDeparture() {
+            const idx = document.getElementById("departureList").children.length;
+            document.getElementById("departureList").insertAdjacentHTML(
+                "beforeend", `
+                        <div class="row g-2 align-items-end mb-2" id="departure-${idx}">
+                            <div class="col-md-4">
+                                <label>Ngày đi</label>
+                                <input type="date" name="departDate" class="form-control" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Ngày về</label>
+                                <input type="date" name="returnDate" class="form-control" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Số chỗ</label>
+                                <input type="number" name="seats" min="1" class="form-control" required>
+                            </div>
+                            <div class="col-md-1 text-end">
+                                <button type="button" class="btn btn-danger" onclick="removeDeparture(${idx})">🗑️</button>
+                            </div>
+                        </div>
+                    `);
+        }
+
+        function removeDeparture(idx) {
+            const row = document.getElementById(`departure-${idx}`);
+            if (row) row.remove();
+        }
+
+        // Validate ngày khởi hành trước khi submit
+        document.getElementById("btnSave").addEventListener("click", function (e) {
+            const starts = document.querySelectorAll('[name="departDate"]');
+            const ends = document.querySelectorAll('[name="returnDate"]');
+            const seats = document.querySelectorAll('[name="seats"]');
+
+            let isValid = true;
+            if (starts.length === 0) {
+                document.getElementById('departureError').innerText = "Vui lòng thêm ít nhất 1 lịch trình.";
+                isValid = false;
+            } else {
+                document.getElementById('departureError').innerText = "";
+            }
+
+            for (let i = 0; i < starts.length; i++) {
+                if (!starts[i].value || !ends[i].value || !seats[i].value) {
+                    isValid = false;
+                    break;
+                }
+            }
+
+ 
+        });
+
+        // Auto load mặc định 1 lịch trình
+        document.addEventListener("DOMContentLoaded", function () {
+            addDeparture();
+        });
+    </script>
+    <partial name="_ValidationScriptsPartial" />
+}

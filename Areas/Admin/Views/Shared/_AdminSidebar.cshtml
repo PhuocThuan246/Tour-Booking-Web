@@ -1,0 +1,143 @@
+﻿@* Areas/Admin/Views/Shared/_AdminSidebar.cshtml *@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Logo ------------------------------------------------------------->
+    <a asp-area="Admin" asp-controller="Home" asp-action="Index"
+       class="brand-link">
+        <i class="fas fa-map-marked-alt ml-2 mr-2"></i>
+        <span class="brand-text font-weight-light">Tourist&nbsp;Admin</span>
+    </a>
+
+    <!-- User ------------------------------------------------------------->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+            <img src="~/adminlte/dist/img/avatar4.png"
+                 class="img-circle elevation-2" alt="User Image" />
+        </div>
+        <div class="info">
+            <a href="#" class="d-block nav-link">Xin chào, Admin</a>
+        </div>
+    </div>
+
+    <!-- MENU ------------------------------------------------------------->
+    <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview" data-accordion="false">
+
+            <!-- Dashboard ------------------------------------------------>
+            <li class="nav-item">
+                <a asp-area="Admin" asp-controller="Home" asp-action="Index"
+                   class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString()=="Home" ? "active" : "")">
+                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+
+            <!-- Quản lý Loại tour (Treeview) -->
+            <li class="nav-item has-treeview @(ViewContext.RouteData.Values["controller"]?.ToString()=="Categories" ? "menu-open" : "")">
+                <a href="#" class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString()=="Categories" ? "active" : "")">
+                    <i class="nav-icon fas fa-folder-open"></i>   <!-- biểu tượng "Phân loại" chuyên nghiệp -->
+                    <p>
+                        Loại tour
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a asp-area="Admin" asp-controller="Categories" asp-action="Index"
+                           class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString()=="Index" ? "active" : "")">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Danh sách loại</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-area="Admin" asp-controller="Categories" asp-action="Create"
+                           class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString()=="Create" ? "active" : "")">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Thêm loại</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <!-- Quản lý Tour -------------------------------------------->
+            <li class="nav-item has-treeview
+                       @(ViewContext.RouteData.Values["controller"]?.ToString()=="Tour" ? "menu-open" : "")">
+
+                <!-- Parent link -->
+                <a href="#"
+                   class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString()=="Tour" ? "active" : "")">
+                    <i class="nav-icon fas fa-suitcase-rolling"></i>
+                    <p>
+                        Quản lý Tour
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+
+                <!-- Sub-menu -->
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a asp-area="Admin" asp-controller="Tour" asp-action="Index"
+                           class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString()=="Index" ? "active" : "")">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Tất cả tour</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-area="Admin" asp-controller="Tour" asp-action="Create"
+                           class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString()=="Create" ? "active" : "")">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Thêm tour</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- Quản lý Booking -------------------------------------------->
+            <li class="nav-item">
+                <a asp-area="Admin" asp-controller="Bookings" asp-action="Index"
+                   class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString()=="Bookings" ? "active" : "")">
+                    <i class="nav-icon fas fa-file-invoice"></i>
+                    <p>Quản lý Booking</p>
+                </a>
+            </li
+
+            <!-- Quản lý người dùng -------------------------------------------->
+            <li class="nav-item">
+                <a asp-area="Admin" asp-controller="Users" asp-action="Index"
+                   class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString()=="Users" ? "active" : "")">
+                    <i class="nav-icon fas fa-users"></i>
+                    <p>Quản lý khách hàng</p>
+                </a>
+            </li
+
+             <!-- Báo cáo thống kê -------------------------------------------->
+            <li class="nav-item">
+                <a asp-area="Admin" asp-controller="Report" asp-action="Index"
+                   class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString()=="Report" ? "active" : "")">
+                    <i class="nav-icon fas fa-chart-bar"></i>
+                    <p>Báo cáo thống kê</p>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+</aside>
+<style>
+/* Ẩn nhãn menu kể cả khi .active nếu sidebar đang thu gọn */
+body.sidebar-mini.sidebar-collapse .main-sidebar .nav-link > p {
+    display: none !important;
+}
+
+/* Ẩn luôn icon mũi tên nếu cần */
+    body.sidebar-mini.sidebar-collapse .main-sidebar .nav-link > p > .right {
+    display: none !important;
+}
+    /* Khi hover sidebar, cho phép hiện lại nhãn */
+    body.sidebar-mini.sidebar-collapse .main-sidebar:hover .nav-link > p,
+    body.sidebar-mini.sidebar-collapse .main-sidebar:hover .nav-link > p > .right,
+    body.sidebar-mini.sidebar-collapse .main-sidebar:hover .user-panel,
+    body.sidebar-mini.sidebar-collapse .main-sidebar:hover .brand-text {
+        display: inline !important;
+}
+
+</style>

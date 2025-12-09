@@ -1,0 +1,117 @@
+﻿@{
+    ViewData["Title"] = "Danh sách loại tour";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">📋 Danh sách loại tour</h2>
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="fas fa-plus-circle mr-1"></i> Thêm loại mới
+        </a>
+    </div>
+
+    <!-- Ô tìm kiếm -->
+    <form id="categorySearchForm" class="row mb-4" onsubmit="event.preventDefault(); fetchCategories(1);">
+        <div class="col-md-4">
+            <div class="input-group">
+                <input type="text" id="searchKeyword" class="form-control" placeholder="Tìm theo tên loại tour..." />
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+
+
+    <!-- Bảng danh sách -->
+    <div class="card shadow-sm border-0">
+        <div class="card-body p-0">
+            <table class="table table-hover table-striped mb-0">
+                <thead class="thead-dark">
+                    <tr class="text-white text-center">
+                        <th style="width:100px">Mã loại</th>
+                        <th>Tên loại tour</th>
+                        <th style="width:160px">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody id="categoryTableBody">
+                    <!-- Dữ liệu AJAX -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="pagination" class="mt-3 d-flex justify-content-center"></div>
+</div>
+
+@section Scripts {
+    <script>
+        const keywordInput = document.getElementById("searchKeyword");
+        const tableBody = document.getElementById("categoryTableBody");
+        const pagination = document.getElementById("pagination");
+        let debounceTimer;
+
+        function fetchCategories(page = 1) {
+            const keyword = keywordInput.value.trim();
+            const url = `/Admin/Categories/SearchJson?keyword=${encodeURIComponent(keyword)}&page=${page}`;
+
+            fetch(url)
+                .then(res => res.json())
+                .then(result => {
+                    const data = result.data;
+                    const currentPage = result.currentPage;
+                    const totalPages = result.totalPages;
+
+                    tableBody.innerHTML = "";
+                    if (data.length === 0) {
+                        tableBody.innerHTML = `<tr><td colspan="3" class="text-center text-muted py-4">Không tìm thấy loại tour nào.</td></tr>`;
+                    } else {
+                        data.forEach(c => {
+                            const row = `
+                                        <tr>
+                                            <td class="text-center">${c.categoryId}</td>
+                                            <td>${c.categoryName}</td>
+                                            <td class="text-nowrap text-center">
+                                                <a href="/Admin/Categories/Edit/${c.categoryId}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i> Sửa</a>
+                                                <a href="/Admin/Categories/Delete/${c.categoryId}" class="btn btn-sm btn-danger ml-1" onclick="return confirm('Bạn có chắc chắn muốn xóa loại tour này?');">
+                                                    <i class="fas fa-trash-alt"></i> Xóa
+                                                </a>
+                                            </td>
+                                        </tr>`;
+                            tableBody.innerHTML += row;
+                        });
+                    }
+
+                    renderPagination(currentPage, totalPages);
+                });
+        }
+
+        function renderPagination(currentPage, totalPages) {
+            pagination.innerHTML = "";
+            if (totalPages <= 1) return;
+
+            let html = `<nav><ul class="pagination">`;
+            for (let i = 1; i <= totalPages; i++) {
+                html += `<li class="page-item ${i === currentPage ? 'active' : ''}">
+                                    <a href="#" class="page-link" data-page="${i}">${i}</a>
+                                </li>`;
+            }
+            html += `</ul></nav>`;
+            pagination.innerHTML = html;
+
+            pagination.querySelectorAll("a.page-link").forEach(link => {
+                link.addEventListener("click", e => {
+                    e.preventDefault();
+                    fetchCategories(parseInt(link.dataset.page));
+                });
+            });
+        }
+
+        keywordInput.addEventListener("input", () => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => fetchCategories(1), 400);
+        });
+
+        document.addEventListener("DOMContentLoaded", () => fetchCategories(1));
+    </script>
+}

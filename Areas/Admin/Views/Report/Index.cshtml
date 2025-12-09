@@ -1,0 +1,175 @@
+﻿@using System.Text.Json
+@{
+    ViewData["Title"] = "Báo cáo thống kê";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<!-- Bộ lọc tháng và năm -->
+<form method="get" class="d-flex justify-content-end gap-2 mb-3">
+    <div class="form-group mb-0">
+        <select name="month" class="form-control" onchange="this.form.submit()">
+            <option value="">-- Chọn tháng --</option>
+            @for (int i = 1; i <= 12; i++)
+            {
+                var isSelected = (ViewBag.SelectedMonth as int?) == i ? "selected" : "";
+                @:<option value="@i" @Html.Raw(isSelected)>Tháng @i</option>
+            }
+        </select>
+    </div>
+    <div class="form-group mb-0">
+        <select name="year" class="form-control" onchange="this.form.submit()">
+            <option value="">-- Chọn năm --</option>
+            @for (int y = 2024; y <= 2026; y++)
+            {
+                var isSelected = (ViewBag.SelectedYear as int?) == y ? "selected" : "";
+                @:<option value="@y" @Html.Raw(isSelected)>Năm @y</option>
+            }
+        </select>
+    </div>
+</form>
+
+<h2 class="mb-4">📊 Báo cáo thống kê</h2>
+
+<!-- Tổng quan -->
+<div class="row text-center mb-5">
+    <div class="col-md-4">
+        <div class="card shadow p-3">
+            <h4 class="text-primary">Tổng số tour</h4>
+            <p class="display-6">@ViewBag.TotalTours</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow p-3">
+            <h4 class="text-success">Tổng đơn đặt tour</h4>
+            <p class="display-6">@ViewBag.TotalBookings</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow p-3">
+            <h4 class="text-danger">Tổng doanh thu</h4>
+            <p class="display-6">@(((decimal)ViewBag.TotalRevenue).ToString("N0")) đ</p>
+        </div>
+    </div>
+</div>
+
+<!-- Biểu đồ Doughnut -->
+<div class="row mb-5">
+    <div class="col-md-6">
+        <div class="card shadow p-3">
+            <h5 class="text-center text-dark">Tỉ lệ điểm đến theo vùng</h5>
+            <canvas id="regionChart" height="300"></canvas>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card shadow p-3">
+            <h5 class="text-center text-dark">Tỉ lệ phương thức thanh toán</h5>
+            <canvas id="paymentChart" height="300"></canvas>
+        </div>
+    </div>
+</div>
+
+<!-- Biểu đồ Doanh thu theo tháng -->
+<div class="card shadow p-4 mb-5">
+    <h5 class="text-center mb-3">📈 Doanh thu theo tháng</h5>
+    <div style="overflow-x: auto;">
+        <canvas id="monthlyRevenueChart" width="1600" height="300"></canvas>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Hàm sinh màu động theo số lượng
+        function generateColors(count) {
+            const palette = [
+                '#f44336', '#4caf50', '#2196f3', '#ff9800', '#9c27b0',
+                '#3f51b5', '#00bcd4', '#8bc34a', '#ffc107', '#795548'
+            ];
+            const colors = [];
+            for (let i = 0; i < count; i++) {
+                colors.push(palette[i % palette.length]);
+            }
+            return colors;
+        }
+
+        // Chart 1: Điểm đến theo vùng
+        const regionLabels = @Html.Raw(JsonSerializer.Serialize((ViewBag.RegionChart as IEnumerable<dynamic>)?.Select(r => (string)r.Region) ?? new List<string>()));
+        const regionData = @Html.Raw(JsonSerializer.Serialize((ViewBag.RegionChart as IEnumerable<dynamic>)?.Select(r => (int)r.Count) ?? new List<int>()));
+        const regionColors = generateColors(regionLabels.length);
+
+        new Chart(document.getElementById('regionChart'), {
+            type: 'doughnut',
+            data: {
+                labels: regionLabels,
+                datasets: [{
+                    data: regionData,
+                    backgroundColor: regionColors
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        // Chart 2: Phương thức thanh toán
+        const paymentLabels = @Html.Raw(JsonSerializer.Serialize((ViewBag.PaymentChart as IEnumerable<dynamic>)?.Select(r => (string)r.Method) ?? new List<string>()));
+        const paymentData = @Html.Raw(JsonSerializer.Serialize((ViewBag.PaymentChart as IEnumerable<dynamic>)?.Select(r => (int)r.Count) ?? new List<int>()));
+        const paymentColors = generateColors(paymentLabels.length);
+
+        new Chart(document.getElementById('paymentChart'), {
+            type: 'doughnut',
+            data: {
+                labels: paymentLabels,
+                datasets: [{
+                    data: paymentData,
+                    backgroundColor: paymentColors
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        // Chart 3: Doanh thu theo tháng
+        new Chart(document.getElementById('monthlyRevenueChart'), {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June',
+                         'July', 'August', 'September', 'October', 'November', 'December'],
+                datasets: [{
+                    label: 'Doanh thu',
+                    data: @Html.Raw(JsonSerializer.Serialize((ViewBag.MonthlyRevenue as decimal[]) ?? new decimal[12])),
+                    fill: true,
+                    tension: 0.3,
+                    backgroundColor: 'rgba(54, 162, 235, 0.3)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 2,
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value.toLocaleString('vi-VN') + ' đ';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { position: 'top' }
+                }
+            }
+        });
+    </script>
+}
+

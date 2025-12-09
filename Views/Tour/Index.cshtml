@@ -1,0 +1,231 @@
+﻿@model X.PagedList.IPagedList<TourBookingWeb.Models.Tour>
+@inject TourBookingWeb.Data.TourDBContext _ctx
+@using X.PagedList
+@using X.PagedList.EF
+@using X.PagedList.Mvc.Core
+@using TourBookingWeb.Helpers
+
+@{
+    ViewData["Title"] = "Danh sách Tour";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Hero Header Start -->
+
+<div id="heroSlider" class="carousel slide mb-0 position-relative" data-bs-ride="carousel">
+    <!-- Static Text Overlay -->
+    <div class="position-absolute top-50 start-50 translate-middle text-center z-3 hero-text-overlay">
+        <h1 class="display-3 text-white animated slideInDown">Danh sách Tour</h1>
+    </div>
+
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="container-fluid hero-header" style="height: 300px; background: url('/img/background/bg1.jpg') center/cover no-repeat;"></div>
+        </div>
+        <div class="carousel-item">
+            <div class="container-fluid hero-header" style="height: 300px; background: url('/img/background/bg2.jpg') center/cover no-repeat;"></div>
+        </div>
+        <div class="carousel-item">
+            <div class="container-fluid hero-header" style="height: 300px; background: url('/img/background/bg3.jpg') center/cover no-repeat;"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Hero Header End -->
+<!-- Thanh tìm kiếm và lọc -->
+<div class="container pt-4 pb-5">
+    <form id="searchForm" class="row g-3 align-items-end">
+        <div class="col-md-3">
+            <label class="form-label fw-semibold">🔎 Tên tour</label>
+            <input   id="keywordInput" name="keyword" class="form-control"
+                     value="@ViewBag.Keyword" placeholder="Nhập tên tour...">
+        </div>
+
+        <div class="col-md-3">
+            <label class="form-label fw-semibold">📂 Loại tour</label>
+            <select id="categorySelect" name="categoryId" class="form-select">
+                <option value="0">Tất cả</option>
+                @foreach (var cat in ViewBag.Categories as List<SelectListItem>)
+                {
+                    <option value="@cat.Value">@cat.Text</option>
+                }
+            </select>
+        </div>
+
+        <div class="col-md-3">
+            <label class="form-label fw-semibold">📅 Ngày đi</label>
+            <input type="date" id="departureInput" name="departureDate"
+                   class="form-control" value="@ViewBag.DepartureDate">
+        </div>
+
+        <div class="col-md-3">
+            <label class="form-label fw-semibold">🗺️ Điểm đến</label>
+            <input list="destList" id="destinationInput" name="destination"
+                   class="form-control" value="@ViewBag.Destination" placeholder="Điểm đến...">
+            <datalist id="destList">
+                @foreach (string d in ViewBag.Destinations)
+                { <option value="@d"></option> }
+            </datalist>
+        </div>
+
+        <div class="col-12 text-end mt-3">
+            <button type="submit" class="btn btn-primary px-4 fw-semibold">
+                <i class="fas fa-search me-1"></i> Tìm tour
+            </button>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+<!-- Tour Packages Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Tours</h6>
+            <h1 class="mb-5">Danh Sách Các Tour</h1>
+        </div>
+        <div id="tourResults" class="row g-4">
+            <!-- Dữ liệu sẽ được render ở đây -->
+        </div>
+    </div>
+</div>
+<div id="pagination" class="mt-4"></div>
+<!-- Tour Packages End -->
+
+
+<!-- JavaScript AJAX -->
+<script>
+    const form = document.getElementById("searchForm");
+    const tourResults = document.getElementById("tourResults");
+    const pagination = document.getElementById("pagination");
+
+    let currentPage = 1;
+    let debounceTimer;
+
+    function fetchTours() {
+        // gom các giá trị filter
+        const qs = new URLSearchParams({
+            keyword: document.getElementById("keywordInput").value.trim(),
+            categoryId: document.getElementById("categorySelect").value,
+            departureDate: document.getElementById("departureInput").value,
+            destination: document.getElementById("destinationInput").value.trim(),
+            page: currentPage
+        });
+
+        fetch(`/Tour/SearchJson?${qs}`)
+            .then(res => res.json())
+            .then(({ data, currentPage: cp, totalPages }) => {
+                renderTours(data);
+                renderPagination(cp, totalPages);
+            });
+    }
+
+    function renderTours(list) {
+        tourResults.innerHTML = list.length === 0
+            ? `<div class="col-12 text-center text-muted">Không tìm thấy tour nào phù hợp.</div>`
+            : list.map(t => {
+                // Xử lý lấy tối đa 3 ngày khởi hành
+                const depHtml = t.departures.map(d => `<span class="px-1">${d}</span>`).join("");
+                return `
+    <div class="col-12 col-md-6 col-lg-4">
+            <a href="/Tour/Details/${t.tourId}?${getCurrentQueryString()}" class="text-decoration-none text-dark h-100 d-block">
+            <div class="package-item h-100 d-flex flex-column shadow-sm rounded overflow-hidden hover-shadow">
+                <div class="overflow-hidden">
+                    <img class="img-fluid w-100" style="height:250px;object-fit:cover"
+                         src="/${t.imageUrl}" alt="${t.title}">
+                </div>
+                <div class="d-flex border-bottom bg-light">
+                    <small class="flex-fill text-center border-end py-2">
+                        <i class="fa fa-map-marker-alt text-primary me-2"></i>${t.destination}
+                    </small>
+                    <small class="flex-fill text-center border-end py-2">
+                        <i class="fa fa-calendar-alt text-primary me-2"></i>${t.duration}
+                    </small>
+                    <small class="flex-fill text-center py-2">
+                        <i class="fa fa-user text-primary me-2"></i>${t.capacity} chỗ
+                    </small>
+                </div>
+                <div class="p-3 text-center flex-grow-1 d-flex flex-column justify-content-between">
+                    <h5 class="fw-bold">${t.title}</h5>
+                    <div class="text-muted small flex-grow-1">
+                        <i class="fa fa-plane-departure text-primary me-2"></i>
+                        <div class="d-flex justify-content-center gap-2 flex-wrap mt-2">
+                            ${depHtml}
+                        </div>
+                    </div>
+                    <div class="fw-bold text-primary mt-2">${Number(t.adultPrice).toLocaleString()} đ</div>
+                </div>
+            </div>
+        </a>
+    </div>`;
+
+            }).join("");
+    }
+
+
+    function renderPagination(cp, total) {
+        if (total <= 1) return pagination.innerHTML = "";
+
+        let html = `<nav><ul class="pagination justify-content-center">`;
+        for (let i = 1; i <= total; i++) {
+            html += `<li class="page-item ${i === cp ? 'active' : ''}">
+                       <a class="page-link" href="#" data-page="${i}">${i}</a>
+                     </li>`;
+        }
+        html += `</ul></nav>`;
+        pagination.innerHTML = html;
+
+        document.querySelectorAll("#pagination a.page-link").forEach(a => {
+            a.addEventListener("click", e => {
+                e.preventDefault();
+                currentPage = Number(a.dataset.page);
+                fetchTours();
+            });
+        });
+    }
+
+    // Khởi động & bind các sự kiện tìm kiếm
+    ["input", "change"].forEach(evt => {
+        document.getElementById("keywordInput").addEventListener(evt, () => {
+            currentPage = 1;
+            debounce();
+        });
+        document.getElementById("categorySelect").addEventListener(evt, () => {
+            currentPage = 1;
+            fetchTours();
+        });
+        document.getElementById("departureInput").addEventListener(evt, () => {
+            currentPage = 1;
+            fetchTours();
+        });
+        document.getElementById("destinationInput").addEventListener(evt, () => {
+            currentPage = 1;
+            debounce();
+        });
+    });
+
+
+    function debounce() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => { currentPage = 1; fetchTours(); }, 400);
+    }
+
+    form.addEventListener("submit", e => { e.preventDefault(); currentPage = 1; fetchTours(); });
+
+    document.addEventListener("DOMContentLoaded", fetchTours);
+        function getCurrentQueryString() {
+        return new URLSearchParams({
+            keyword: document.getElementById("keywordInput").value.trim(),
+            categoryId: document.getElementById("categorySelect").value,
+            departureDate: document.getElementById("departureInput").value,
+            destination: document.getElementById("destinationInput").value.trim(),
+            page: currentPage
+        }).toString();
+    }
+
+</script>

@@ -1,0 +1,230 @@
+﻿@model TourBookingWeb.Models.Tour
+@using System.Text.Json
+
+@{
+    ViewData["Title"] = "Cập nhật tour";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="mb-0">📝 Cập nhật tour</h2>
+            <a asp-action="Index" class="btn btn-outline-secondary">
+                <i class="fas fa-arrow-left mr-1"></i> Quay lại
+            </a>
+        </div>
+
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+                <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(m => m.TourId)
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        <label asp-for="Title"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="CategoryId"></label>
+                        <select asp-for="CategoryId" asp-items="ViewBag.CategoryList" class="form-control"></select>
+                        <span asp-validation-for="CategoryId" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Chọn ảnh đại diện mới (nếu muốn đổi)</label>
+                        <input type="file" name="CoverImage" class="form-control-file" />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Description"></label>
+                        <textarea asp-for="Description" class="form-control" rows="2"></textarea>
+                        <span asp-validation-for="Description" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Itinerary"></label>
+                        <textarea asp-for="Itinerary" class="form-control" rows="10"></textarea>
+                        <span asp-validation-for="Itinerary" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="AdultPrice"></label>
+                            <input asp-for="AdultPrice" class="form-control" />
+                            <span asp-validation-for="AdultPrice" class="text-danger small"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="ChildPrice"></label>
+                            <input asp-for="ChildPrice" class="form-control" />
+                            <span asp-validation-for="ChildPrice" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Capacity"></label>
+                        <input asp-for="Capacity" class="form-control" />
+                        <span asp-validation-for="Capacity" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Duration"></label>
+                        <input asp-for="Duration" class="form-control" />
+                        <span asp-validation-for="Duration" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Transport"></label>
+                        <input asp-for="Transport" class="form-control" />
+                        <span asp-validation-for="Transport" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Destination"></label>
+                        <input asp-for="Destination" class="form-control" />
+                        <span asp-validation-for="Destination" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Chọn số ảnh minh họa (nếu muốn đổi phải đổi hết)</label>
+                        <select id="dayCount" name="DayCount" class="form-control" onchange="generateDayImages()">
+                            @for (int i = 1; i <= 10; i++)
+                            {
+                                <option value="@i">@i ngày</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div id="dayImagesContainer"></div>
+
+                    <div class="form-group">
+                        <label>Ngày khởi hành</label>
+                        <div id="scheduleList"></div>
+                        <button type="button" class="btn btn-outline-primary mt-2" onclick="addSchedule()">➕ Thêm ngày khởi hành</button>
+                        <div id="scheduleError" class="text-danger small mt-2"></div>
+                    </div>
+
+                    <div class="card-footer d-flex justify-content-end mt-4">
+                        <button type="submit" id="btnSave" class="btn btn-primary">
+                            <i class="fas fa-save mr-1"></i> Lưu thay đổi
+                        </button>
+                        <a asp-action="Index" class="btn btn-secondary ml-2">Huỷ</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        function generateDayImages() {
+            const count = parseInt(document.getElementById("dayCount").value);
+            const container = document.getElementById("dayImagesContainer");
+            container.innerHTML = "";
+            for (let i = 1; i <= count; i++) {
+                container.innerHTML += `
+                    <div class="form-group border rounded p-3 mb-3 bg-light">
+                        <label><strong>Ảnh minh họa ngày ${i}</strong></label>
+                        <input type="file" name="DayImages" class="form-control-file" />
+                    </div>`;
+            }
+        }
+
+        function addSchedule(dep = '', ret = '', slot = '', isDeleted = false, scheduleId = '') {
+            const idx = document.getElementById("scheduleList").children.length;
+            const id = `schedule-${idx}`;
+
+            // Dựa vào isDeleted để cấu hình giao diện
+            const opacity = isDeleted ? "0.4" : "1";
+            const icon = isDeleted ? "↩️" : "🗑️";
+            const btnClass = isDeleted ? "btn-secondary" : "btn-danger";
+
+            document.getElementById("scheduleList").insertAdjacentHTML("beforeend", `
+                <div class="row g-2 align-items-end mb-2 schedule-row" id="${id}" style="opacity: ${opacity};">
+                    <input type="hidden" name="isDeleted" value="${isDeleted}" />
+                    <input type="hidden" name="scheduleId" value="${scheduleId}" />
+                    <div class="col-md-4">
+                        <input type="date" class="form-control" name="departDate" value="${dep}" required>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="date" class="form-control" name="returnDate" value="${ret}" required>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" min="1" class="form-control" name="seats" value="${slot}" required>
+                    </div>
+                    <div class="col-md-1 text-end">
+                        <button type="button" class="btn ${btnClass}" onclick="softDeleteSchedule('${id}')">${icon}</button>
+                    </div>
+                </div>`);
+        }
+
+
+
+
+        function softDeleteSchedule(id) {
+            const row = document.getElementById(id);
+            if (!row) return;
+
+            const hiddenInput = row.querySelector("input[name='isDeleted']");
+            const isDeleted = hiddenInput.value === "true";
+
+            const deleteBtn = row.querySelector("button");
+
+            if (isDeleted) {
+                // Bỏ đánh dấu xoá → khôi phục
+                hiddenInput.value = "false";
+                row.style.opacity = "1";
+                deleteBtn.innerHTML = "🗑️"; // trở lại biểu tượng xóa
+                deleteBtn.classList.remove("btn-secondary");
+                deleteBtn.classList.add("btn-danger");
+            } else {
+                // Đánh dấu xoá
+                hiddenInput.value = "true";
+                row.style.opacity = "0.4";
+                deleteBtn.innerHTML = "↩️"; // biểu tượng khôi phục
+                deleteBtn.classList.remove("btn-danger");
+                deleteBtn.classList.add("btn-secondary");
+            }
+        }
+
+
+
+
+        function removeSchedule(idx) {
+            const row = document.getElementById(`schedule-${idx}`);
+            if (row) row.remove();
+        }
+
+        // Tải lịch trình cũ từ ViewBag
+        document.addEventListener('DOMContentLoaded', function () {
+            generateDayImages();
+
+            const schedules = @Html.Raw(JsonSerializer.Serialize(ViewBag.TourSchedules ?? new List<object>()));
+
+            if (schedules.length > 0) {
+                schedules.forEach(s => {
+                    const dep = s.departureDate ?? '';
+                    const ret = s.returnDate ?? '';
+                    const sid = s.scheduleId ?? '';
+                    const slot = s.remainingSlot ?? 0;
+                    const isDel = s.isDeleted ?? false;
+
+                    addSchedule(dep, ret, slot, isDel, sid);
+                });
+            }
+             else {
+                            addSchedule();
+                        }
+                    });
+
+
+    </script>
+    <partial name="_ValidationScriptsPartial" />
+}
+
+

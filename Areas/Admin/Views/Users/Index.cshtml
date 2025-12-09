@@ -1,0 +1,58 @@
+﻿@model IEnumerable<TourBookingWeb.Models.User>
+@{
+    ViewData["Title"] = "Quản lý khách hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2 class="mb-4">📋 Danh sách khách hàng</h2>
+
+<!-- Form tìm kiếm -->
+<form id="searchForm" class="row mb-3">
+    <div class="col-md-4">
+        <input type="text" name="keyword" id="keyword" class="form-control" placeholder="Tìm theo tên, email, điện thoại, địa chỉ..."
+               value="@ViewBag.Keyword" />
+    </div>
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-primary">🔍 Tìm kiếm</button>
+    </div>
+</form>
+
+<!-- Danh sách khách hàng sẽ được load lại bằng AJAX -->
+<div id="userTable">
+    @await Html.PartialAsync("_UserListPartial", Model)
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            const $keyword = $('#keyword');
+
+            // Gửi yêu cầu tìm kiếm khi submit (vẫn giữ lại nếu cần Enter)
+            $('#searchForm').on('submit', function (e) {
+                e.preventDefault();
+                loadUsers(1);
+            });
+
+            // Gửi tìm kiếm ngay khi gõ (keyup)
+            $keyword.on('keyup', function () {
+                loadUsers(1);
+            });
+
+            // Xử lý click vào phân trang (sự kiện động)
+            $(document).on('click', '.page-link', function (e) {
+                e.preventDefault();
+                var page = $(this).data('page');
+                loadUsers(page);
+            });
+
+            // Hàm load user
+            function loadUsers(page) {
+                var keyword = $keyword.val();
+                $.get('@Url.Action("Index", "Users", new { area = "Admin" })', { keyword: keyword, page: page }, function (data) {
+                    $('#userTable').html(data);
+                });
+            }
+        });
+    </script>
+}

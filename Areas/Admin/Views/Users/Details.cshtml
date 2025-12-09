@@ -1,0 +1,68 @@
+﻿@model TourBookingWeb.Models.User
+
+@{
+    ViewData["Title"] = "Chi tiết khách hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mb-4">👤 Chi tiết khách hàng</h2>
+
+<div class="card shadow p-4 mb-5">
+    <dl class="row mb-0">
+        <dt class="col-sm-3">Mã khách hàng</dt>
+        <dd class="col-sm-9">@Model.UserId</dd>
+
+        <dt class="col-sm-3">Họ tên</dt>
+        <dd class="col-sm-9">@Model.FullName</dd>
+
+        <dt class="col-sm-3">Email</dt>
+        <dd class="col-sm-9">@Model.Email</dd>
+
+        <dt class="col-sm-3">Điện thoại</dt>
+        <dd class="col-sm-9">@Model.Phone</dd>
+
+        <dt class="col-sm-3">Địa chỉ</dt>
+        <dd class="col-sm-9">@Model.Address</dd>
+
+        <dt class="col-sm-3">Vai trò</dt>
+        <dd class="col-sm-9">@Model.Role</dd>
+    </dl>
+</div>
+
+@if (Model.Bookings != null && Model.Bookings.Any())
+{
+    <h4 class="mb-3">🧾 Đơn đặt tour của khách</h4>
+    <table class="table table-bordered table-hover">
+        <thead class="table-light">
+            <tr>
+                <th>#</th>
+                <th>Tour</th>
+                <th>Ngày đi</th>
+                <th>Người lớn</th>
+                <th>Trẻ em</th>
+                <th>Tổng tiền</th>
+                <th>Phương thức</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var b in Model.Bookings.OrderByDescending(b => b.DepartureDate))
+            {
+                <tr>
+                    <td>@b.BookingId</td>
+                    <td>@b.Tour?.Title</td>
+                    <td>@b.DepartureDate.ToString("dd/MM/yyyy")</td>
+                    <td>@b.AdultQuantity</td>
+                    <td>@b.ChildQuantity</td>
+                    <td>@b.TotalPrice.ToString("N0") đ</td>
+                    <td>@b.PaymentMethod</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">Khách hàng này chưa đặt tour nào.</div>
+}
+
+<a asp-action="Index" class="btn btn-secondary mt-4">⬅ Quay lại danh sách</a>

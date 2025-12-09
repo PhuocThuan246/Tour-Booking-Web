@@ -1,0 +1,2262 @@
+2025-05-14 00:44:35.4206 INFO Executed DbCommand (324ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [TourBookingDB]; 
+2025-05-14 00:44:35.5156 INFO Executed DbCommand (66ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [TourBookingDB] SET READ_COMMITTED_SNAPSHOT ON;
+END; 
+2025-05-14 00:44:35.6345 INFO Executed DbCommand (98ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 
+2025-05-14 00:44:35.6345 INFO Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long. 
+2025-05-14 00:44:35.6617 INFO Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result 
+2025-05-14 00:44:35.7212 INFO Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END; 
+2025-05-14 00:44:35.7278 INFO Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 
+2025-05-14 00:44:35.7278 INFO Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+2025-05-14 00:44:35.7510 INFO Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+2025-05-14 00:44:35.7605 INFO Applying migration '20250506041246_InitDb1'. 
+2025-05-14 00:44:35.9065 INFO Executed DbCommand (116ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Categories] (
+    [CategoryId] int NOT NULL IDENTITY,
+    [CategoryName] nvarchar(200) NOT NULL,
+    CONSTRAINT [PK_Categories] PRIMARY KEY ([CategoryId])
+); 
+2025-05-14 00:44:35.9065 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [UserId] int NOT NULL IDENTITY,
+    [Email] nvarchar(200) NOT NULL,
+    [FullName] nvarchar(200) NOT NULL,
+    [Phone] nvarchar(200) NOT NULL,
+    [Address] nvarchar(200) NOT NULL,
+    [Password] nvarchar(200) NOT NULL,
+    [Role] nvarchar(200) NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([UserId])
+); 
+2025-05-14 00:44:35.9145 INFO Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Tours] (
+    [TourId] int NOT NULL IDENTITY,
+    [Title] nvarchar(200) NOT NULL,
+    [Capacity] int NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [AdultPrice] decimal(18,2) NOT NULL,
+    [ChildPrice] decimal(18,2) NOT NULL,
+    [Transport] nvarchar(200) NOT NULL,
+    [Departures] nvarchar(max) NOT NULL,
+    [Destination] nvarchar(200) NOT NULL,
+    [Duration] nvarchar(200) NOT NULL,
+    [Itinerary] nvarchar(2000) NOT NULL,
+    [CategoryId] int NOT NULL,
+    CONSTRAINT [PK_Tours] PRIMARY KEY ([TourId]),
+    CONSTRAINT [FK_Tours_Categories_CategoryId] FOREIGN KEY ([CategoryId]) REFERENCES [Categories] ([CategoryId]) ON DELETE NO ACTION
+); 
+2025-05-14 00:44:35.9145 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Images] (
+    [ImageId] int NOT NULL IDENTITY,
+    [Url] nvarchar(200) NOT NULL,
+    [Description] nvarchar(200) NOT NULL,
+    [TourId] int NOT NULL,
+    [DayNumber] int NULL,
+    CONSTRAINT [PK_Images] PRIMARY KEY ([ImageId]),
+    CONSTRAINT [FK_Images_Tours_TourId] FOREIGN KEY ([TourId]) REFERENCES [Tours] ([TourId]) ON DELETE CASCADE
+); 
+2025-05-14 00:44:35.9145 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [TourSchedules] (
+    [Id] int NOT NULL IDENTITY,
+    [TourId] int NOT NULL,
+    [DepartureDate] datetime2 NOT NULL,
+    [ReturnDate] datetime2 NOT NULL,
+    [RemainingSlot] int NOT NULL,
+    CONSTRAINT [PK_TourSchedules] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_TourSchedules_Tours_TourId] FOREIGN KEY ([TourId]) REFERENCES [Tours] ([TourId]) ON DELETE CASCADE
+); 
+2025-05-14 00:44:35.9145 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Bookings] (
+    [BookingId] int NOT NULL IDENTITY,
+    [BookingDate] datetime2 NOT NULL,
+    [AdultQuantity] int NOT NULL,
+    [ChildQuantity] int NOT NULL,
+    [TotalPrice] decimal(18,2) NOT NULL,
+    [SpecialRequest] nvarchar(200) NULL,
+    [TourId] int NOT NULL,
+    [UserId] int NOT NULL,
+    [DepartureDate] datetime2 NOT NULL,
+    [TourScheduleId] int NULL,
+    [PaymentMethod] nvarchar(max) NULL,
+    [CategoryId] int NULL,
+    CONSTRAINT [PK_Bookings] PRIMARY KEY ([BookingId]),
+    CONSTRAINT [FK_Bookings_Categories_CategoryId] FOREIGN KEY ([CategoryId]) REFERENCES [Categories] ([CategoryId]),
+    CONSTRAINT [FK_Bookings_TourSchedules_TourScheduleId] FOREIGN KEY ([TourScheduleId]) REFERENCES [TourSchedules] ([Id]),
+    CONSTRAINT [FK_Bookings_Tours_TourId] FOREIGN KEY ([TourId]) REFERENCES [Tours] ([TourId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Bookings_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([UserId]) ON DELETE CASCADE
+); 
+2025-05-14 00:44:35.9145 INFO Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Bookings_CategoryId] ON [Bookings] ([CategoryId]); 
+2025-05-14 00:44:35.9145 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Bookings_TourId] ON [Bookings] ([TourId]); 
+2025-05-14 00:44:35.9302 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Bookings_TourScheduleId] ON [Bookings] ([TourScheduleId]); 
+2025-05-14 00:44:35.9302 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Bookings_UserId] ON [Bookings] ([UserId]); 
+2025-05-14 00:44:35.9302 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Images_TourId] ON [Images] ([TourId]); 
+2025-05-14 00:44:35.9302 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Tours_CategoryId] ON [Tours] ([CategoryId]); 
+2025-05-14 00:44:35.9843 INFO Executed DbCommand (50ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_TourSchedules_TourId] ON [TourSchedules] ([TourId]); 
+2025-05-14 00:44:35.9954 INFO Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250506041246_InitDb1', N'9.0.4'); 
+2025-05-14 00:44:35.9954 INFO Applying migration '20250506173007_AddTourSchedule'. 
+2025-05-14 00:44:35.9954 INFO Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250506173007_AddTourSchedule', N'9.0.4'); 
+2025-05-14 00:44:36.0094 INFO Applying migration '20250507134435_DeleteForgeinKey'. 
+2025-05-14 00:44:36.0355 INFO Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [Bookings] DROP CONSTRAINT [FK_Bookings_Categories_CategoryId]; 
+2025-05-14 00:44:36.0355 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [Bookings] DROP CONSTRAINT [FK_Bookings_TourSchedules_TourScheduleId]; 
+2025-05-14 00:44:36.0355 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DROP INDEX [IX_Bookings_CategoryId] ON [Bookings]; 
+2025-05-14 00:44:46.2905 INFO Executed DbCommand (10,249ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @var sysname;
+SELECT @var = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Tours]') AND [c].[name] = N'Departures');
+IF @var IS NOT NULL EXEC(N'ALTER TABLE [Tours] DROP CONSTRAINT [' + @var + '];');
+ALTER TABLE [Tours] DROP COLUMN [Departures]; 
+2025-05-14 00:44:47.0135 INFO Executed DbCommand (722ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @var1 sysname;
+SELECT @var1 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Bookings]') AND [c].[name] = N'CategoryId');
+IF @var1 IS NOT NULL EXEC(N'ALTER TABLE [Bookings] DROP CONSTRAINT [' + @var1 + '];');
+ALTER TABLE [Bookings] DROP COLUMN [CategoryId]; 
+2025-05-14 00:44:47.0135 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [Bookings] ADD CONSTRAINT [FK_Bookings_TourSchedules_TourScheduleId] FOREIGN KEY ([TourScheduleId]) REFERENCES [TourSchedules] ([Id]) ON DELETE NO ACTION; 
+2025-05-14 00:44:47.0135 INFO Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250507134435_DeleteForgeinKey', N'9.0.4'); 
+2025-05-14 00:44:47.0135 INFO Applying migration '20250507161659_DeleteCagtegoryNavigation'. 
+2025-05-14 00:44:47.0381 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [Tours] DROP CONSTRAINT [FK_Tours_Categories_CategoryId]; 
+2025-05-14 00:44:47.0404 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [Tours] ADD CONSTRAINT [FK_Tours_Categories_CategoryId] FOREIGN KEY ([CategoryId]) REFERENCES [Categories] ([CategoryId]) ON DELETE CASCADE; 
+2025-05-14 00:44:47.0404 INFO Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250507161659_DeleteCagtegoryNavigation', N'9.0.4'); 
+2025-05-14 00:44:47.0404 INFO Applying migration '20250508102523_AddIdentityTables'. 
+2025-05-14 00:44:47.0727 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+); 
+2025-05-14 00:44:47.0727 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [AspNetUsers] (
+    [Id] nvarchar(450) NOT NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id])
+); 
+2025-05-14 00:44:47.0727 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [AspNetRoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE
+); 
+2025-05-14 00:44:47.0727 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [AspNetUserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+); 
+2025-05-14 00:44:47.0727 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [AspNetUserLogins] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+); 
+2025-05-14 00:44:47.0727 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [AspNetUserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+); 
+2025-05-14 00:44:47.0727 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [AspNetUserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+); 
+2025-05-14 00:44:47.1204 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [AspNetRoleClaims] ([RoleId]); 
+2025-05-14 00:44:47.1204 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL; 
+2025-05-14 00:44:47.1204 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserClaims_UserId] ON [AspNetUserClaims] ([UserId]); 
+2025-05-14 00:44:47.1204 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserLogins_UserId] ON [AspNetUserLogins] ([UserId]); 
+2025-05-14 00:44:47.1204 INFO Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [AspNetUserRoles] ([RoleId]); 
+2025-05-14 00:44:47.1204 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [EmailIndex] ON [AspNetUsers] ([NormalizedEmail]); 
+2025-05-14 00:44:47.1204 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE UNIQUE INDEX [UserNameIndex] ON [AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL; 
+2025-05-14 00:44:47.1204 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250508102523_AddIdentityTables', N'9.0.4'); 
+2025-05-14 00:44:47.1204 INFO Applying migration '20250508171127_Final'. 
+2025-05-14 00:44:47.1401 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250508171127_Final', N'9.0.4'); 
+2025-05-14 00:44:47.1401 INFO Applying migration '20250510054812_InitDb'. 
+2025-05-14 00:44:47.1492 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250510054812_InitDb', N'9.0.4'); 
+2025-05-14 00:44:47.1492 INFO Applying migration '20250510070108_InitDb4'. 
+2025-05-14 00:44:47.7928 INFO Executed DbCommand (624ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+EXEC sp_rename N'[TourSchedules].[Id]', N'TourScheduleId', 'COLUMN'; 
+2025-05-14 00:44:47.7928 INFO Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250510070108_InitDb4', N'9.0.4'); 
+2025-05-14 00:44:47.7928 INFO Applying migration '20250511075937_addIsDelete'. 
+2025-05-14 00:44:47.8135 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [TourSchedules] ADD [IsDeleted] bit NOT NULL DEFAULT CAST(0 AS bit); 
+2025-05-14 00:44:47.8135 INFO Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250511075937_addIsDelete', N'9.0.4'); 
+2025-05-14 00:44:47.8242 INFO Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result 
+2025-05-14 00:45:52.0835 INFO Executed DbCommand (57ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0 
+2025-05-14 00:45:52.2858 INFO Executed DbCommand (99ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0 
+2025-05-14 00:45:52.4977 INFO Executed DbCommand (13ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3); 
+2025-05-14 00:45:52.5348 INFO Executed DbCommand (6ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0 
+2025-05-14 00:45:52.7572 INFO Executed DbCommand (114ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0 
+2025-05-14 00:45:52.9353 INFO Executed DbCommand (13ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14); 
+2025-05-14 00:45:53.0885 INFO Executed DbCommand (130ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0 
+2025-05-14 00:45:53.1933 INFO Executed DbCommand (13ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1 
+2025-05-14 00:45:53.2060 INFO Executed DbCommand (6ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0 
+2025-05-14 00:45:53.2435 INFO Executed DbCommand (13ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0 
+2025-05-14 00:45:53.4172 INFO Executed DbCommand (120ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p16='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p17='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+OUTPUT 1
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17; 
+2025-05-14 00:45:54.3250 INFO Now listening on: http://localhost:5062 
+2025-05-14 00:45:54.3916 INFO Application started. Press Ctrl+C to shut down. 
+2025-05-14 00:45:54.3916 INFO Hosting environment: Development 
+2025-05-14 00:45:54.3916 INFO Content root path: E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb 
+2025-05-14 00:46:05.9630 INFO Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:46:06.0722 INFO Executed DbCommand (12ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN [TourSchedules] AS [t0] ON [t1].[TourId] = [t0].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId] 
+2025-05-14 00:46:06.1896 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CONVERT(varchar(11), [c].[CategoryId]) AS [Value], [c].[CategoryName] AS [Text]
+FROM [Categories] AS [c] 
+2025-05-14 00:46:06.2415 INFO Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Destination]
+FROM (
+    SELECT DISTINCT [t].[Destination]
+    FROM [Tours] AS [t]
+) AS [t0]
+ORDER BY [t0].[Destination] 
+2025-05-14 00:46:06.6630 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:46:06.7637 INFO Executed DbCommand (40ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 00:46:21.2548 INFO Executed DbCommand (17ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0 
+2025-05-14 00:46:21.3513 INFO Executed DbCommand (6ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0 
+2025-05-14 00:46:21.3828 INFO Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0 
+2025-05-14 00:46:21.3887 INFO Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0 
+2025-05-14 00:46:21.3887 INFO Executed DbCommand (3ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0 
+2025-05-14 00:46:21.4190 INFO Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0 
+2025-05-14 00:46:21.4190 INFO Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0 
+2025-05-14 00:46:21.4190 INFO Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0 
+2025-05-14 00:46:21.4190 INFO Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0 
+2025-05-14 00:46:21.4332 INFO Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0 
+2025-05-14 00:46:21.4841 INFO Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0 
+2025-05-14 00:46:21.4841 WARN admin 
+2025-05-14 00:46:23.1795 INFO Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[Role] <> N'admin' 
+2025-05-14 00:46:23.1877 INFO Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Role] <> N'admin'
+ORDER BY [u].[UserId]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY 
+2025-05-14 00:46:24.6398 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[Role] <> N'admin' 
+2025-05-14 00:46:24.6479 INFO Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Role] <> N'admin'
+ORDER BY [u].[UserId]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY 
+2025-05-14 00:46:28.5473 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[Role] <> N'admin' 
+2025-05-14 00:46:28.5473 INFO Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Role] <> N'admin'
+ORDER BY [u].[UserId]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY 
+2025-05-14 00:46:30.9500 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:46:32.9387 INFO Executed DbCommand (8ms) [Parameters=[@__year_Value_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b]
+WHERE DATEPART(year, [b].[DepartureDate]) = @__year_Value_0 
+2025-05-14 00:46:32.9521 INFO Executed DbCommand (3ms) [Parameters=[@__year_Value_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COALESCE(SUM([b].[TotalPrice]), 0.0)
+FROM [Bookings] AS [b]
+WHERE DATEPART(year, [b].[DepartureDate]) = @__year_Value_0 
+2025-05-14 00:46:32.9851 INFO Executed DbCommand (11ms) [Parameters=[@__year_Value_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName] AS [Region], COUNT(*) AS [Count]
+FROM [Bookings] AS [b]
+INNER JOIN [Tours] AS [t] ON [b].[TourId] = [t].[TourId]
+INNER JOIN [Categories] AS [c] ON [t].[CategoryId] = [c].[CategoryId]
+WHERE DATEPART(year, [b].[DepartureDate]) = @__year_Value_0
+GROUP BY [c].[CategoryName] 
+2025-05-14 00:46:32.9980 INFO Executed DbCommand (8ms) [Parameters=[@__year_Value_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [b].[PaymentMethod] AS [Method], COUNT(*) AS [Count]
+FROM [Bookings] AS [b]
+WHERE DATEPART(year, [b].[DepartureDate]) = @__year_Value_0
+GROUP BY [b].[PaymentMethod] 
+2025-05-14 00:46:32.9980 INFO Executed DbCommand (3ms) [Parameters=[@__year_Value_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [b0].[Key] AS [Month], COALESCE(SUM([b0].[TotalPrice]), 0.0) AS [Revenue]
+FROM (
+    SELECT [b].[TotalPrice], DATEPART(month, [b].[DepartureDate]) AS [Key]
+    FROM [Bookings] AS [b]
+    WHERE DATEPART(year, [b].[DepartureDate]) = @__year_Value_0
+) AS [b0]
+GROUP BY [b0].[Key] 
+2025-05-14 00:46:33.0118 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:46:36.3711 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[Role] <> N'admin' 
+2025-05-14 00:46:36.3711 INFO Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Role] <> N'admin'
+ORDER BY [u].[UserId]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY 
+2025-05-14 00:46:38.2903 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[Role] <> N'admin' 
+2025-05-14 00:46:38.2903 INFO Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Role] <> N'admin'
+ORDER BY [u].[UserId]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY 
+2025-05-14 00:46:39.9027 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b] 
+2025-05-14 00:46:39.9258 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b] 
+2025-05-14 00:46:39.9398 INFO Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [b0].[BookingId], [b0].[AdultQuantity], [b0].[BookingDate], [b0].[ChildQuantity], [b0].[DepartureDate], [b0].[PaymentMethod], [b0].[SpecialRequest], [b0].[TotalPrice], [b0].[TourId], [b0].[TourScheduleId], [b0].[UserId], [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role], [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [b].[BookingId], [b].[AdultQuantity], [b].[BookingDate], [b].[ChildQuantity], [b].[DepartureDate], [b].[PaymentMethod], [b].[SpecialRequest], [b].[TotalPrice], [b].[TourId], [b].[TourScheduleId], [b].[UserId]
+    FROM [Bookings] AS [b]
+    ORDER BY [b].[BookingDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [b0]
+INNER JOIN [Users] AS [u] ON [b0].[UserId] = [u].[UserId]
+INNER JOIN [Tours] AS [t] ON [b0].[TourId] = [t].[TourId]
+LEFT JOIN [TourSchedules] AS [t0] ON [b0].[TourScheduleId] = [t0].[TourScheduleId]
+ORDER BY [b0].[BookingDate] DESC 
+2025-05-14 00:46:39.9557 INFO Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [b0].[BookingId], [b0].[AdultQuantity], [b0].[BookingDate], [b0].[ChildQuantity], [b0].[DepartureDate], [b0].[PaymentMethod], [b0].[SpecialRequest], [b0].[TotalPrice], [b0].[TourId], [b0].[TourScheduleId], [b0].[UserId], [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role], [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [b].[BookingId], [b].[AdultQuantity], [b].[BookingDate], [b].[ChildQuantity], [b].[DepartureDate], [b].[PaymentMethod], [b].[SpecialRequest], [b].[TotalPrice], [b].[TourId], [b].[TourScheduleId], [b].[UserId]
+    FROM [Bookings] AS [b]
+    ORDER BY [b].[BookingDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [b0]
+INNER JOIN [Users] AS [u] ON [b0].[UserId] = [u].[UserId]
+INNER JOIN [Tours] AS [t] ON [b0].[TourId] = [t].[TourId]
+LEFT JOIN [TourSchedules] AS [t0] ON [b0].[TourScheduleId] = [t0].[TourScheduleId]
+ORDER BY [b0].[BookingDate] DESC 
+2025-05-14 00:46:40.0412 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b] 
+2025-05-14 00:46:40.0822 INFO Executed DbCommand (17ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [b0].[BookingId], [b0].[AdultQuantity], [b0].[BookingDate], [b0].[ChildQuantity], [b0].[DepartureDate], [b0].[PaymentMethod], [b0].[SpecialRequest], [b0].[TotalPrice], [b0].[TourId], [b0].[TourScheduleId], [b0].[UserId], [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role], [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [b].[BookingId], [b].[AdultQuantity], [b].[BookingDate], [b].[ChildQuantity], [b].[DepartureDate], [b].[PaymentMethod], [b].[SpecialRequest], [b].[TotalPrice], [b].[TourId], [b].[TourScheduleId], [b].[UserId]
+    FROM [Bookings] AS [b]
+    ORDER BY [b].[BookingId] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [b0]
+INNER JOIN [Users] AS [u] ON [b0].[UserId] = [u].[UserId]
+INNER JOIN [Tours] AS [t] ON [b0].[TourId] = [t].[TourId]
+LEFT JOIN [TourSchedules] AS [t0] ON [b0].[TourScheduleId] = [t0].[TourScheduleId]
+ORDER BY [b0].[BookingId] DESC 
+2025-05-14 00:46:47.0520 INFO Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Categories] AS [c] 
+2025-05-14 00:46:47.0668 INFO Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryId], [c].[CategoryName]
+FROM [Categories] AS [c]
+ORDER BY [c].[CategoryId]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY 
+2025-05-14 00:46:49.5324 INFO Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[ImageId], [i].[DayNumber], [i].[Description], [i].[TourId], [i].[Url]
+FROM [Images] AS [i]
+WHERE [i].[DayNumber] = 0 
+2025-05-14 00:46:49.5490 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CONVERT(varchar(11), [c].[CategoryId]) AS [Value], [c].[CategoryName] AS [Text]
+FROM [Categories] AS [c] 
+2025-05-14 00:46:49.5490 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Destination]
+FROM (
+    SELECT DISTINCT [t].[Destination]
+    FROM [Tours] AS [t]
+) AS [t0]
+ORDER BY [t0].[Destination] 
+2025-05-14 00:46:49.6695 INFO Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:46:49.6978 INFO Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[TourId] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN [TourSchedules] AS [t0] ON [t1].[TourId] = [t0].[TourId]
+ORDER BY [t1].[TourId] DESC 
+2025-05-14 00:46:49.6978 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[ImageId], [i].[DayNumber], [i].[Description], [i].[TourId], [i].[Url]
+FROM [Images] AS [i]
+WHERE [i].[DayNumber] = 0 
+2025-05-14 00:46:57.4640 INFO Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:46:57.4814 INFO Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[TourId] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+) AS [t1]
+LEFT JOIN [TourSchedules] AS [t0] ON [t1].[TourId] = [t0].[TourId]
+ORDER BY [t1].[TourId] DESC 
+2025-05-14 00:46:57.4814 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[ImageId], [i].[DayNumber], [i].[Description], [i].[TourId], [i].[Url]
+FROM [Images] AS [i]
+WHERE [i].[DayNumber] = 0 
+2025-05-14 00:46:58.3342 INFO Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:46:58.3389 INFO Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[TourId] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN [TourSchedules] AS [t0] ON [t1].[TourId] = [t0].[TourId]
+ORDER BY [t1].[TourId] DESC 
+2025-05-14 00:46:58.3389 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [i].[ImageId], [i].[DayNumber], [i].[Description], [i].[TourId], [i].[Url]
+FROM [Images] AS [i]
+WHERE [i].[DayNumber] = 0 
+2025-05-14 00:47:07.7227 INFO Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:47:07.7476 INFO Executed DbCommand (23ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN [TourSchedules] AS [t0] ON [t1].[TourId] = [t0].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId] 
+2025-05-14 00:47:07.7603 INFO Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CONVERT(varchar(11), [c].[CategoryId]) AS [Value], [c].[CategoryName] AS [Text]
+FROM [Categories] AS [c] 
+2025-05-14 00:47:07.7603 INFO Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Destination]
+FROM (
+    SELECT DISTINCT [t].[Destination]
+    FROM [Tours] AS [t]
+) AS [t0]
+ORDER BY [t0].[Destination] 
+2025-05-14 00:47:08.2561 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:47:08.3433 INFO Executed DbCommand (74ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 00:47:10.7751 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:47:10.7751 INFO Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN [TourSchedules] AS [t0] ON [t1].[TourId] = [t0].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId] 
+2025-05-14 00:47:10.7751 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CONVERT(varchar(11), [c].[CategoryId]) AS [Value], [c].[CategoryName] AS [Text]
+FROM [Categories] AS [c] 
+2025-05-14 00:47:10.7751 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Destination]
+FROM (
+    SELECT DISTINCT [t].[Destination]
+    FROM [Tours] AS [t]
+) AS [t0]
+ORDER BY [t0].[Destination] 
+2025-05-14 00:47:10.8584 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:47:10.8701 INFO Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 00:47:18.7002 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:47:18.7295 INFO Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 00:47:30.3256 INFO Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:47:30.3438 INFO Executed DbCommand (15ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 00:47:33.8435 INFO Executed DbCommand (9ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t2].[TourScheduleId], [t2].[DepartureDate], [t2].[IsDeleted], [t2].[RemainingSlot], [t2].[ReturnDate], [t2].[TourId]
+FROM (
+    SELECT TOP(1) [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    WHERE [t].[TourId] = @__id_0
+) AS [t1]
+LEFT JOIN (
+    SELECT [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+    FROM [TourSchedules] AS [t0]
+    WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+) AS [t2] ON [t1].[TourId] = [t2].[TourId]
+ORDER BY [t1].[TourId] 
+2025-05-14 00:47:33.8654 INFO Executed DbCommand (2ms) [Parameters=[@__Model_TourId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [i].[ImageId], [i].[DayNumber], [i].[Description], [i].[TourId], [i].[Url]
+FROM [Images] AS [i]
+WHERE [i].[TourId] = @__Model_TourId_0 
+2025-05-14 00:47:41.8185 INFO Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:47:41.8435 INFO Executed DbCommand (23ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN [TourSchedules] AS [t0] ON [t1].[TourId] = [t0].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId] 
+2025-05-14 00:47:41.8545 INFO Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CONVERT(varchar(11), [c].[CategoryId]) AS [Value], [c].[CategoryName] AS [Text]
+FROM [Categories] AS [c] 
+2025-05-14 00:47:41.8545 INFO Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Destination]
+FROM (
+    SELECT DISTINCT [t].[Destination]
+    FROM [Tours] AS [t]
+) AS [t0]
+ORDER BY [t0].[Destination] 
+2025-05-14 00:47:42.3213 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:47:42.3615 INFO Executed DbCommand (34ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 00:47:45.4155 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:47:45.4155 INFO Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 00:47:53.7720 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:47:53.7849 INFO Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 00:48:16.2550 INFO Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t2].[TourScheduleId], [t2].[DepartureDate], [t2].[IsDeleted], [t2].[RemainingSlot], [t2].[ReturnDate], [t2].[TourId]
+FROM (
+    SELECT TOP(1) [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    WHERE [t].[TourId] = @__id_0
+) AS [t1]
+LEFT JOIN (
+    SELECT [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+    FROM [TourSchedules] AS [t0]
+    WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+) AS [t2] ON [t1].[TourId] = [t2].[TourId]
+ORDER BY [t1].[TourId] 
+2025-05-14 00:48:16.2584 INFO Executed DbCommand (2ms) [Parameters=[@__Model_TourId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [i].[ImageId], [i].[DayNumber], [i].[Description], [i].[TourId], [i].[Url]
+FROM [Images] AS [i]
+WHERE [i].[TourId] = @__Model_TourId_0 
+2025-05-14 00:48:30.0970 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:48:30.1045 INFO Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN [TourSchedules] AS [t0] ON [t1].[TourId] = [t0].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId] 
+2025-05-14 00:48:30.1045 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CONVERT(varchar(11), [c].[CategoryId]) AS [Value], [c].[CategoryName] AS [Text]
+FROM [Categories] AS [c] 
+2025-05-14 00:48:30.1045 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Destination]
+FROM (
+    SELECT DISTINCT [t].[Destination]
+    FROM [Tours] AS [t]
+) AS [t0]
+ORDER BY [t0].[Destination] 
+2025-05-14 00:48:30.2078 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:48:30.2187 INFO Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 00:48:35.5953 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:48:35.6090 INFO Executed DbCommand (12ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 00:48:45.1193 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:48:45.1193 INFO Executed DbCommand (9ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 00:48:49.9888 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 00:48:49.9951 INFO Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 00:49:00.4644 INFO Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[Role] <> N'admin' 
+2025-05-14 00:49:00.4644 INFO Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Role] <> N'admin'
+ORDER BY [u].[UserId]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY 
+2025-05-14 00:49:14.8821 INFO Executed DbCommand (61ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0 
+2025-05-14 00:49:14.9900 INFO Executed DbCommand (8ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0 
+2025-05-14 00:49:15.3446 INFO Now listening on: http://localhost:5062 
+2025-05-14 00:49:15.4466 INFO Application started. Press Ctrl+C to shut down. 
+2025-05-14 00:49:15.4466 INFO Hosting environment: Development 
+2025-05-14 00:49:15.4466 INFO Content root path: E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb 
+2025-05-14 07:10:31.4738 INFO Executed DbCommand (159ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0 
+2025-05-14 07:10:31.5944 INFO Executed DbCommand (9ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0 
+2025-05-14 07:10:32.0457 INFO Now listening on: http://localhost:5062 
+2025-05-14 07:10:32.0996 INFO Application started. Press Ctrl+C to shut down. 
+2025-05-14 07:10:32.0996 INFO Hosting environment: Development 
+2025-05-14 07:10:32.0996 INFO Content root path: E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb 
+2025-05-14 07:10:46.8600 INFO Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 07:10:46.8600 INFO Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 07:10:46.9685 INFO Executed DbCommand (28ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN [TourSchedules] AS [t0] ON [t1].[TourId] = [t0].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId] 
+2025-05-14 07:10:46.9685 INFO Executed DbCommand (28ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN [TourSchedules] AS [t0] ON [t1].[TourId] = [t0].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId] 
+2025-05-14 07:10:47.0621 INFO Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CONVERT(varchar(11), [c].[CategoryId]) AS [Value], [c].[CategoryName] AS [Text]
+FROM [Categories] AS [c] 
+2025-05-14 07:10:47.0621 INFO Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CONVERT(varchar(11), [c].[CategoryId]) AS [Value], [c].[CategoryName] AS [Text]
+FROM [Categories] AS [c] 
+2025-05-14 07:10:47.0991 INFO Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Destination]
+FROM (
+    SELECT DISTINCT [t].[Destination]
+    FROM [Tours] AS [t]
+) AS [t0]
+ORDER BY [t0].[Destination] 
+2025-05-14 07:10:47.0991 INFO Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Destination]
+FROM (
+    SELECT DISTINCT [t].[Destination]
+    FROM [Tours] AS [t]
+) AS [t0]
+ORDER BY [t0].[Destination] 
+2025-05-14 07:10:47.5206 INFO Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 07:10:47.6591 INFO Executed DbCommand (43ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 07:10:55.0674 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 07:10:55.0967 INFO Executed DbCommand (13ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 07:10:55.1067 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 07:10:55.1067 INFO Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 07:10:59.2075 INFO Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t2].[TourScheduleId], [t2].[DepartureDate], [t2].[IsDeleted], [t2].[RemainingSlot], [t2].[ReturnDate], [t2].[TourId]
+FROM (
+    SELECT TOP(1) [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    WHERE [t].[TourId] = @__id_0
+) AS [t1]
+LEFT JOIN (
+    SELECT [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+    FROM [TourSchedules] AS [t0]
+    WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+) AS [t2] ON [t1].[TourId] = [t2].[TourId]
+ORDER BY [t1].[TourId] 
+2025-05-14 07:10:59.2297 INFO Executed DbCommand (3ms) [Parameters=[@__Model_TourId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [i].[ImageId], [i].[DayNumber], [i].[Description], [i].[TourId], [i].[Url]
+FROM [Images] AS [i]
+WHERE [i].[TourId] = @__Model_TourId_0 
+2025-05-14 07:11:49.4924 INFO Executed DbCommand (9ms) [Parameters=[@__tourId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[TourId], [t0].[AdultPrice], [t0].[Capacity], [t0].[CategoryId], [t0].[ChildPrice], [t0].[Description], [t0].[Destination], [t0].[Duration], [t0].[Itinerary], [t0].[Title], [t0].[Transport], [i].[ImageId], [i].[DayNumber], [i].[Description], [i].[TourId], [i].[Url]
+FROM (
+    SELECT TOP(1) [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    WHERE [t].[TourId] = @__tourId_0
+) AS [t0]
+LEFT JOIN [Images] AS [i] ON [t0].[TourId] = [i].[TourId]
+ORDER BY [t0].[TourId] 
+2025-05-14 07:11:49.5020 INFO Người dùng mở trang đặt tour: "Tour Mộc Châu mùa hoa mận 2N1Đ" – Ngày đi: "16/12/2025" 
+2025-05-14 07:11:49.5351 INFO Executed DbCommand (16ms) [Parameters=[@__tourId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[TourScheduleId], [t].[DepartureDate], [t].[IsDeleted], [t].[RemainingSlot], [t].[ReturnDate], [t].[TourId]
+FROM [TourSchedules] AS [t]
+WHERE [t].[TourId] = @__tourId_0 AND [t].[RemainingSlot] > 0
+ORDER BY [t].[DepartureDate] 
+2025-05-14 07:17:58.7195 INFO Executed DbCommand (80ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0 
+2025-05-14 07:17:58.8232 INFO Executed DbCommand (8ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0 
+2025-05-14 07:17:59.2055 INFO Now listening on: http://localhost:5062 
+2025-05-14 07:17:59.2767 INFO Application started. Press Ctrl+C to shut down. 
+2025-05-14 07:17:59.2767 INFO Hosting environment: Development 
+2025-05-14 07:17:59.2767 INFO Content root path: E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb 
+2025-05-14 07:18:05.0136 INFO Executed DbCommand (31ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t2].[TourScheduleId], [t2].[DepartureDate], [t2].[IsDeleted], [t2].[RemainingSlot], [t2].[ReturnDate], [t2].[TourId]
+FROM (
+    SELECT TOP(1) [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    WHERE [t].[TourId] = @__id_0
+) AS [t1]
+LEFT JOIN (
+    SELECT [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+    FROM [TourSchedules] AS [t0]
+    WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+) AS [t2] ON [t1].[TourId] = [t2].[TourId]
+ORDER BY [t1].[TourId] 
+2025-05-14 07:18:05.0925 INFO Executed DbCommand (4ms) [Parameters=[@__Model_TourId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [i].[ImageId], [i].[DayNumber], [i].[Description], [i].[TourId], [i].[Url]
+FROM [Images] AS [i]
+WHERE [i].[TourId] = @__Model_TourId_0 
+2025-05-14 07:18:10.9940 INFO Executed DbCommand (5ms) [Parameters=[@__tourId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[TourId], [t0].[AdultPrice], [t0].[Capacity], [t0].[CategoryId], [t0].[ChildPrice], [t0].[Description], [t0].[Destination], [t0].[Duration], [t0].[Itinerary], [t0].[Title], [t0].[Transport], [i].[ImageId], [i].[DayNumber], [i].[Description], [i].[TourId], [i].[Url]
+FROM (
+    SELECT TOP(1) [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    WHERE [t].[TourId] = @__tourId_0
+) AS [t0]
+LEFT JOIN [Images] AS [i] ON [t0].[TourId] = [i].[TourId]
+ORDER BY [t0].[TourId] 
+2025-05-14 07:18:11.0061 INFO Người dùng mở trang đặt tour: "Tour Trung Quốc 5N4Đ – Bắc Kinh – Vạn Lý Trường Thành" – Ngày đi: "11/01/2026" 
+2025-05-14 07:18:11.0888 INFO Executed DbCommand (14ms) [Parameters=[@__tourId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[TourScheduleId], [t].[DepartureDate], [t].[IsDeleted], [t].[RemainingSlot], [t].[ReturnDate], [t].[TourId]
+FROM [TourSchedules] AS [t]
+WHERE [t].[TourId] = @__tourId_0 AND [t].[RemainingSlot] > 0
+ORDER BY [t].[DepartureDate] 
+2025-05-14 09:31:15.2245 INFO Executed DbCommand (109ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0 
+2025-05-14 09:31:15.3367 INFO Executed DbCommand (8ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0 
+2025-05-14 09:31:15.8155 INFO Now listening on: http://localhost:5062 
+2025-05-14 09:31:15.9444 INFO Application started. Press Ctrl+C to shut down. 
+2025-05-14 09:31:15.9444 INFO Hosting environment: Development 
+2025-05-14 09:31:15.9444 INFO Content root path: E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb 
+2025-05-14 09:31:30.0844 INFO Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 09:31:30.2501 INFO Executed DbCommand (30ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN [TourSchedules] AS [t0] ON [t1].[TourId] = [t0].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId] 
+2025-05-14 09:31:30.4177 INFO Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CONVERT(varchar(11), [c].[CategoryId]) AS [Value], [c].[CategoryName] AS [Text]
+FROM [Categories] AS [c] 
+2025-05-14 09:31:30.4785 INFO Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Destination]
+FROM (
+    SELECT DISTINCT [t].[Destination]
+    FROM [Tours] AS [t]
+) AS [t0]
+ORDER BY [t0].[Destination] 
+2025-05-14 09:31:31.2447 INFO Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 09:31:31.4157 INFO Executed DbCommand (51ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 10:10:59.7091 INFO Executed DbCommand (88ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0 
+2025-05-14 10:10:59.8731 INFO Executed DbCommand (9ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0 
+2025-05-14 10:11:00.3643 INFO Now listening on: http://localhost:5062 
+2025-05-14 10:11:00.4584 INFO Application started. Press Ctrl+C to shut down. 
+2025-05-14 10:11:00.4584 INFO Hosting environment: Development 
+2025-05-14 10:11:00.4584 INFO Content root path: E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb 
+2025-05-14 10:11:19.8162 INFO Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 10:11:19.9794 INFO Executed DbCommand (32ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN [TourSchedules] AS [t0] ON [t1].[TourId] = [t0].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId] 
+2025-05-14 10:11:20.1482 INFO Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CONVERT(varchar(11), [c].[CategoryId]) AS [Value], [c].[CategoryName] AS [Text]
+FROM [Categories] AS [c] 
+2025-05-14 10:11:20.2215 INFO Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Destination]
+FROM (
+    SELECT DISTINCT [t].[Destination]
+    FROM [Tours] AS [t]
+) AS [t0]
+ORDER BY [t0].[Destination] 
+2025-05-14 10:11:20.7897 INFO Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 10:11:20.9147 INFO Executed DbCommand (33ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 10:11:26.0464 INFO Executed DbCommand (17ms) [Parameters=[@__keyword_0_contains='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t]
+WHERE [t].[Title] LIKE @__keyword_0_contains ESCAPE N'\' 
+2025-05-14 10:11:26.1042 INFO Executed DbCommand (21ms) [Parameters=[@__keyword_0_contains='?' (Size = 200), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    WHERE [t].[Title] LIKE @__keyword_0_contains ESCAPE N'\'
+    ORDER BY [t].[Title]
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 10:11:27.6592 INFO Executed DbCommand (6ms) [Parameters=[@__keyword_0_contains='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t]
+WHERE [t].[Title] LIKE @__keyword_0_contains ESCAPE N'\' 
+2025-05-14 10:11:27.6789 INFO Executed DbCommand (17ms) [Parameters=[@__keyword_0_contains='?' (Size = 200), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    WHERE [t].[Title] LIKE @__keyword_0_contains ESCAPE N'\'
+    ORDER BY [t].[Title]
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 10:11:29.3062 INFO Executed DbCommand (4ms) [Parameters=[@__keyword_0_contains='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t]
+WHERE [t].[Title] LIKE @__keyword_0_contains ESCAPE N'\' 
+2025-05-14 10:11:29.3221 INFO Executed DbCommand (14ms) [Parameters=[@__keyword_0_contains='?' (Size = 200), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    WHERE [t].[Title] LIKE @__keyword_0_contains ESCAPE N'\'
+    ORDER BY [t].[Title]
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 10:11:33.1135 INFO Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 10:11:33.1320 INFO Executed DbCommand (16ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 10:11:36.6751 INFO Executed DbCommand (4ms) [Parameters=[@__categoryId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t]
+WHERE [t].[CategoryId] = @__categoryId_0 
+2025-05-14 10:11:36.7053 INFO Executed DbCommand (11ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    WHERE [t].[CategoryId] = @__categoryId_0
+    ORDER BY [t].[Title]
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 10:11:36.7053 INFO Executed DbCommand (2ms) [Parameters=[@__categoryId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t]
+WHERE [t].[CategoryId] = @__categoryId_0 
+2025-05-14 10:11:36.7217 INFO Executed DbCommand (3ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    WHERE [t].[CategoryId] = @__categoryId_0
+    ORDER BY [t].[Title]
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 10:11:50.2688 INFO Executed DbCommand (45ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__departureDate_Value_Date_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t]
+WHERE [t].[CategoryId] = @__categoryId_0 AND EXISTS (
+    SELECT 1
+    FROM [TourSchedules] AS [t0]
+    WHERE [t].[TourId] = [t0].[TourId] AND CONVERT(date, [t0].[DepartureDate]) = @__departureDate_Value_Date_1) 
+2025-05-14 10:11:50.3145 INFO Executed DbCommand (23ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__departureDate_Value_Date_1='?' (DbType = DateTime2), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t2].[TourId], [t2].[Title], [t2].[Destination], [t2].[Duration], [t2].[Capacity], [t2].[AdultPrice], [t4].[DepartureDate], [t4].[TourScheduleId], [t2].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    WHERE [t].[CategoryId] = @__categoryId_0 AND EXISTS (
+        SELECT 1
+        FROM [TourSchedules] AS [t0]
+        WHERE [t].[TourId] = [t0].[TourId] AND CONVERT(date, [t0].[DepartureDate]) = @__departureDate_Value_Date_1)
+    ORDER BY [t].[Title]
+    OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+) AS [t2]
+LEFT JOIN (
+    SELECT [t3].[DepartureDate], [t3].[TourScheduleId], [t3].[TourId]
+    FROM (
+        SELECT [t1].[DepartureDate], [t1].[TourScheduleId], [t1].[TourId], ROW_NUMBER() OVER(PARTITION BY [t1].[TourId] ORDER BY [t1].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t1]
+        WHERE [t1].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t3]
+    WHERE [t3].[row] <= 3
+) AS [t4] ON [t2].[TourId] = [t4].[TourId]
+ORDER BY [t2].[Title], [t2].[TourId], [t4].[TourId], [t4].[DepartureDate] 
+2025-05-14 10:11:51.9964 INFO Executed DbCommand (12ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__departureDate_Value_Date_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t]
+WHERE [t].[CategoryId] = @__categoryId_0 AND EXISTS (
+    SELECT 1
+    FROM [TourSchedules] AS [t0]
+    WHERE [t].[TourId] = [t0].[TourId] AND CONVERT(date, [t0].[DepartureDate]) = @__departureDate_Value_Date_1) 
+2025-05-14 10:11:52.0151 INFO Executed DbCommand (17ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__departureDate_Value_Date_1='?' (DbType = DateTime2), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t2].[TourId], [t2].[Title], [t2].[Destination], [t2].[Duration], [t2].[Capacity], [t2].[AdultPrice], [t4].[DepartureDate], [t4].[TourScheduleId], [t2].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    WHERE [t].[CategoryId] = @__categoryId_0 AND EXISTS (
+        SELECT 1
+        FROM [TourSchedules] AS [t0]
+        WHERE [t].[TourId] = [t0].[TourId] AND CONVERT(date, [t0].[DepartureDate]) = @__departureDate_Value_Date_1)
+    ORDER BY [t].[Title]
+    OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+) AS [t2]
+LEFT JOIN (
+    SELECT [t3].[DepartureDate], [t3].[TourScheduleId], [t3].[TourId]
+    FROM (
+        SELECT [t1].[DepartureDate], [t1].[TourScheduleId], [t1].[TourId], ROW_NUMBER() OVER(PARTITION BY [t1].[TourId] ORDER BY [t1].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t1]
+        WHERE [t1].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t3]
+    WHERE [t3].[row] <= 3
+) AS [t4] ON [t2].[TourId] = [t4].[TourId]
+ORDER BY [t2].[Title], [t2].[TourId], [t4].[TourId], [t4].[DepartureDate] 
+2025-05-14 10:11:52.0270 INFO Executed DbCommand (3ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__departureDate_Value_Date_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t]
+WHERE [t].[CategoryId] = @__categoryId_0 AND EXISTS (
+    SELECT 1
+    FROM [TourSchedules] AS [t0]
+    WHERE [t].[TourId] = [t0].[TourId] AND CONVERT(date, [t0].[DepartureDate]) = @__departureDate_Value_Date_1) 
+2025-05-14 10:11:52.0323 INFO Executed DbCommand (1ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__departureDate_Value_Date_1='?' (DbType = DateTime2), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t2].[TourId], [t2].[Title], [t2].[Destination], [t2].[Duration], [t2].[Capacity], [t2].[AdultPrice], [t4].[DepartureDate], [t4].[TourScheduleId], [t2].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    WHERE [t].[CategoryId] = @__categoryId_0 AND EXISTS (
+        SELECT 1
+        FROM [TourSchedules] AS [t0]
+        WHERE [t].[TourId] = [t0].[TourId] AND CONVERT(date, [t0].[DepartureDate]) = @__departureDate_Value_Date_1)
+    ORDER BY [t].[Title]
+    OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+) AS [t2]
+LEFT JOIN (
+    SELECT [t3].[DepartureDate], [t3].[TourScheduleId], [t3].[TourId]
+    FROM (
+        SELECT [t1].[DepartureDate], [t1].[TourScheduleId], [t1].[TourId], ROW_NUMBER() OVER(PARTITION BY [t1].[TourId] ORDER BY [t1].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t1]
+        WHERE [t1].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t3]
+    WHERE [t3].[row] <= 3
+) AS [t4] ON [t2].[TourId] = [t4].[TourId]
+ORDER BY [t2].[Title], [t2].[TourId], [t4].[TourId], [t4].[DepartureDate] 
+2025-05-14 10:11:53.5591 INFO Executed DbCommand (15ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__departureDate_Value_Date_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t]
+WHERE [t].[CategoryId] = @__categoryId_0 AND EXISTS (
+    SELECT 1
+    FROM [TourSchedules] AS [t0]
+    WHERE [t].[TourId] = [t0].[TourId] AND CONVERT(date, [t0].[DepartureDate]) = @__departureDate_Value_Date_1) 
+2025-05-14 10:11:53.5807 INFO Executed DbCommand (17ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__departureDate_Value_Date_1='?' (DbType = DateTime2), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t2].[TourId], [t2].[Title], [t2].[Destination], [t2].[Duration], [t2].[Capacity], [t2].[AdultPrice], [t4].[DepartureDate], [t4].[TourScheduleId], [t2].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    WHERE [t].[CategoryId] = @__categoryId_0 AND EXISTS (
+        SELECT 1
+        FROM [TourSchedules] AS [t0]
+        WHERE [t].[TourId] = [t0].[TourId] AND CONVERT(date, [t0].[DepartureDate]) = @__departureDate_Value_Date_1)
+    ORDER BY [t].[Title]
+    OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+) AS [t2]
+LEFT JOIN (
+    SELECT [t3].[DepartureDate], [t3].[TourScheduleId], [t3].[TourId]
+    FROM (
+        SELECT [t1].[DepartureDate], [t1].[TourScheduleId], [t1].[TourId], ROW_NUMBER() OVER(PARTITION BY [t1].[TourId] ORDER BY [t1].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t1]
+        WHERE [t1].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t3]
+    WHERE [t3].[row] <= 3
+) AS [t4] ON [t2].[TourId] = [t4].[TourId]
+ORDER BY [t2].[Title], [t2].[TourId], [t4].[TourId], [t4].[DepartureDate] 
+2025-05-14 10:11:53.9167 INFO Executed DbCommand (11ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__departureDate_Value_Date_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t]
+WHERE [t].[CategoryId] = @__categoryId_0 AND EXISTS (
+    SELECT 1
+    FROM [TourSchedules] AS [t0]
+    WHERE [t].[TourId] = [t0].[TourId] AND CONVERT(date, [t0].[DepartureDate]) = @__departureDate_Value_Date_1) 
+2025-05-14 10:11:53.9457 INFO Executed DbCommand (27ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__departureDate_Value_Date_1='?' (DbType = DateTime2), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t2].[TourId], [t2].[Title], [t2].[Destination], [t2].[Duration], [t2].[Capacity], [t2].[AdultPrice], [t4].[DepartureDate], [t4].[TourScheduleId], [t2].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    WHERE [t].[CategoryId] = @__categoryId_0 AND EXISTS (
+        SELECT 1
+        FROM [TourSchedules] AS [t0]
+        WHERE [t].[TourId] = [t0].[TourId] AND CONVERT(date, [t0].[DepartureDate]) = @__departureDate_Value_Date_1)
+    ORDER BY [t].[Title]
+    OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+) AS [t2]
+LEFT JOIN (
+    SELECT [t3].[DepartureDate], [t3].[TourScheduleId], [t3].[TourId]
+    FROM (
+        SELECT [t1].[DepartureDate], [t1].[TourScheduleId], [t1].[TourId], ROW_NUMBER() OVER(PARTITION BY [t1].[TourId] ORDER BY [t1].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t1]
+        WHERE [t1].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t3]
+    WHERE [t3].[row] <= 3
+) AS [t4] ON [t2].[TourId] = [t4].[TourId]
+ORDER BY [t2].[Title], [t2].[TourId], [t4].[TourId], [t4].[DepartureDate] 
+2025-05-14 10:11:54.3074 INFO Executed DbCommand (10ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__departureDate_Value_Date_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t]
+WHERE [t].[CategoryId] = @__categoryId_0 AND EXISTS (
+    SELECT 1
+    FROM [TourSchedules] AS [t0]
+    WHERE [t].[TourId] = [t0].[TourId] AND CONVERT(date, [t0].[DepartureDate]) = @__departureDate_Value_Date_1) 
+2025-05-14 10:11:54.3229 INFO Executed DbCommand (14ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__departureDate_Value_Date_1='?' (DbType = DateTime2), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t2].[TourId], [t2].[Title], [t2].[Destination], [t2].[Duration], [t2].[Capacity], [t2].[AdultPrice], [t4].[DepartureDate], [t4].[TourScheduleId], [t2].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    WHERE [t].[CategoryId] = @__categoryId_0 AND EXISTS (
+        SELECT 1
+        FROM [TourSchedules] AS [t0]
+        WHERE [t].[TourId] = [t0].[TourId] AND CONVERT(date, [t0].[DepartureDate]) = @__departureDate_Value_Date_1)
+    ORDER BY [t].[Title]
+    OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+) AS [t2]
+LEFT JOIN (
+    SELECT [t3].[DepartureDate], [t3].[TourScheduleId], [t3].[TourId]
+    FROM (
+        SELECT [t1].[DepartureDate], [t1].[TourScheduleId], [t1].[TourId], ROW_NUMBER() OVER(PARTITION BY [t1].[TourId] ORDER BY [t1].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t1]
+        WHERE [t1].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t3]
+    WHERE [t3].[row] <= 3
+) AS [t4] ON [t2].[TourId] = [t4].[TourId]
+ORDER BY [t2].[Title], [t2].[TourId], [t4].[TourId], [t4].[DepartureDate] 
+2025-05-14 10:11:54.8430 INFO Executed DbCommand (13ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__departureDate_Value_Date_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t]
+WHERE [t].[CategoryId] = @__categoryId_0 AND EXISTS (
+    SELECT 1
+    FROM [TourSchedules] AS [t0]
+    WHERE [t].[TourId] = [t0].[TourId] AND CONVERT(date, [t0].[DepartureDate]) = @__departureDate_Value_Date_1) 
+2025-05-14 10:11:54.8677 INFO Executed DbCommand (22ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__departureDate_Value_Date_1='?' (DbType = DateTime2), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t2].[TourId], [t2].[Title], [t2].[Destination], [t2].[Duration], [t2].[Capacity], [t2].[AdultPrice], [t4].[DepartureDate], [t4].[TourScheduleId], [t2].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    WHERE [t].[CategoryId] = @__categoryId_0 AND EXISTS (
+        SELECT 1
+        FROM [TourSchedules] AS [t0]
+        WHERE [t].[TourId] = [t0].[TourId] AND CONVERT(date, [t0].[DepartureDate]) = @__departureDate_Value_Date_1)
+    ORDER BY [t].[Title]
+    OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+) AS [t2]
+LEFT JOIN (
+    SELECT [t3].[DepartureDate], [t3].[TourScheduleId], [t3].[TourId]
+    FROM (
+        SELECT [t1].[DepartureDate], [t1].[TourScheduleId], [t1].[TourId], ROW_NUMBER() OVER(PARTITION BY [t1].[TourId] ORDER BY [t1].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t1]
+        WHERE [t1].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t3]
+    WHERE [t3].[row] <= 3
+) AS [t4] ON [t2].[TourId] = [t4].[TourId]
+ORDER BY [t2].[Title], [t2].[TourId], [t4].[TourId], [t4].[DepartureDate] 
+2025-05-14 10:11:55.2445 INFO Executed DbCommand (9ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__departureDate_Value_Date_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t]
+WHERE [t].[CategoryId] = @__categoryId_0 AND EXISTS (
+    SELECT 1
+    FROM [TourSchedules] AS [t0]
+    WHERE [t].[TourId] = [t0].[TourId] AND CONVERT(date, [t0].[DepartureDate]) = @__departureDate_Value_Date_1) 
+2025-05-14 10:11:55.2638 INFO Executed DbCommand (17ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__departureDate_Value_Date_1='?' (DbType = DateTime2), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t2].[TourId], [t2].[Title], [t2].[Destination], [t2].[Duration], [t2].[Capacity], [t2].[AdultPrice], [t4].[DepartureDate], [t4].[TourScheduleId], [t2].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    WHERE [t].[CategoryId] = @__categoryId_0 AND EXISTS (
+        SELECT 1
+        FROM [TourSchedules] AS [t0]
+        WHERE [t].[TourId] = [t0].[TourId] AND CONVERT(date, [t0].[DepartureDate]) = @__departureDate_Value_Date_1)
+    ORDER BY [t].[Title]
+    OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+) AS [t2]
+LEFT JOIN (
+    SELECT [t3].[DepartureDate], [t3].[TourScheduleId], [t3].[TourId]
+    FROM (
+        SELECT [t1].[DepartureDate], [t1].[TourScheduleId], [t1].[TourId], ROW_NUMBER() OVER(PARTITION BY [t1].[TourId] ORDER BY [t1].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t1]
+        WHERE [t1].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t3]
+    WHERE [t3].[row] <= 3
+) AS [t4] ON [t2].[TourId] = [t4].[TourId]
+ORDER BY [t2].[Title], [t2].[TourId], [t4].[TourId], [t4].[DepartureDate] 
+2025-05-14 10:11:56.1737 INFO Executed DbCommand (27ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__departureDate_Value_Date_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t]
+WHERE [t].[CategoryId] = @__categoryId_0 AND EXISTS (
+    SELECT 1
+    FROM [TourSchedules] AS [t0]
+    WHERE [t].[TourId] = [t0].[TourId] AND CONVERT(date, [t0].[DepartureDate]) = @__departureDate_Value_Date_1) 
+2025-05-14 10:11:56.2131 INFO Executed DbCommand (36ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__departureDate_Value_Date_1='?' (DbType = DateTime2), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t2].[TourId], [t2].[Title], [t2].[Destination], [t2].[Duration], [t2].[Capacity], [t2].[AdultPrice], [t4].[DepartureDate], [t4].[TourScheduleId], [t2].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    WHERE [t].[CategoryId] = @__categoryId_0 AND EXISTS (
+        SELECT 1
+        FROM [TourSchedules] AS [t0]
+        WHERE [t].[TourId] = [t0].[TourId] AND CONVERT(date, [t0].[DepartureDate]) = @__departureDate_Value_Date_1)
+    ORDER BY [t].[Title]
+    OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+) AS [t2]
+LEFT JOIN (
+    SELECT [t3].[DepartureDate], [t3].[TourScheduleId], [t3].[TourId]
+    FROM (
+        SELECT [t1].[DepartureDate], [t1].[TourScheduleId], [t1].[TourId], ROW_NUMBER() OVER(PARTITION BY [t1].[TourId] ORDER BY [t1].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t1]
+        WHERE [t1].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t3]
+    WHERE [t3].[row] <= 3
+) AS [t4] ON [t2].[TourId] = [t4].[TourId]
+ORDER BY [t2].[Title], [t2].[TourId], [t4].[TourId], [t4].[DepartureDate] 
+2025-05-14 10:11:59.6055 INFO Executed DbCommand (12ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t2].[TourScheduleId], [t2].[DepartureDate], [t2].[IsDeleted], [t2].[RemainingSlot], [t2].[ReturnDate], [t2].[TourId]
+FROM (
+    SELECT TOP(1) [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    WHERE [t].[TourId] = @__id_0
+) AS [t1]
+LEFT JOIN (
+    SELECT [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+    FROM [TourSchedules] AS [t0]
+    WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+) AS [t2] ON [t1].[TourId] = [t2].[TourId]
+ORDER BY [t1].[TourId] 
+2025-05-14 10:11:59.6415 INFO Executed DbCommand (5ms) [Parameters=[@__Model_TourId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [i].[ImageId], [i].[DayNumber], [i].[Description], [i].[TourId], [i].[Url]
+FROM [Images] AS [i]
+WHERE [i].[TourId] = @__Model_TourId_0 
+2025-05-14 10:12:09.1225 INFO Executed DbCommand (9ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t2].[TourScheduleId], [t2].[DepartureDate], [t2].[IsDeleted], [t2].[RemainingSlot], [t2].[ReturnDate], [t2].[TourId]
+FROM (
+    SELECT TOP(1) [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    WHERE [t].[TourId] = @__id_0
+) AS [t1]
+LEFT JOIN (
+    SELECT [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+    FROM [TourSchedules] AS [t0]
+    WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+) AS [t2] ON [t1].[TourId] = [t2].[TourId]
+ORDER BY [t1].[TourId] 
+2025-05-14 10:12:09.1225 INFO Executed DbCommand (4ms) [Parameters=[@__Model_TourId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [i].[ImageId], [i].[DayNumber], [i].[Description], [i].[TourId], [i].[Url]
+FROM [Images] AS [i]
+WHERE [i].[TourId] = @__Model_TourId_0 
+2025-05-14 10:12:16.2139 INFO Executed DbCommand (16ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t2].[TourScheduleId], [t2].[DepartureDate], [t2].[IsDeleted], [t2].[RemainingSlot], [t2].[ReturnDate], [t2].[TourId]
+FROM (
+    SELECT TOP(1) [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    WHERE [t].[TourId] = @__id_0
+) AS [t1]
+LEFT JOIN (
+    SELECT [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+    FROM [TourSchedules] AS [t0]
+    WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+) AS [t2] ON [t1].[TourId] = [t2].[TourId]
+ORDER BY [t1].[TourId] 
+2025-05-14 10:12:16.2139 INFO Executed DbCommand (5ms) [Parameters=[@__Model_TourId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [i].[ImageId], [i].[DayNumber], [i].[Description], [i].[TourId], [i].[Url]
+FROM [Images] AS [i]
+WHERE [i].[TourId] = @__Model_TourId_0 
+2025-05-14 10:12:38.3126 INFO Executed DbCommand (12ms) [Parameters=[@__tourId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[TourId], [t0].[AdultPrice], [t0].[Capacity], [t0].[CategoryId], [t0].[ChildPrice], [t0].[Description], [t0].[Destination], [t0].[Duration], [t0].[Itinerary], [t0].[Title], [t0].[Transport], [i].[ImageId], [i].[DayNumber], [i].[Description], [i].[TourId], [i].[Url]
+FROM (
+    SELECT TOP(1) [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    WHERE [t].[TourId] = @__tourId_0
+) AS [t0]
+LEFT JOIN [Images] AS [i] ON [t0].[TourId] = [i].[TourId]
+ORDER BY [t0].[TourId] 
+2025-05-14 10:12:38.3126 INFO Người dùng mở trang đặt tour: "Tour Ai Cập 7N6Đ – Cairo – Luxor" – Ngày đi: "25/10/2025" 
+2025-05-14 10:12:38.3579 INFO Executed DbCommand (8ms) [Parameters=[@__tourId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[TourScheduleId], [t].[DepartureDate], [t].[IsDeleted], [t].[RemainingSlot], [t].[ReturnDate], [t].[TourId]
+FROM [TourSchedules] AS [t]
+WHERE [t].[TourId] = @__tourId_0 AND [t].[RemainingSlot] > 0
+ORDER BY [t].[DepartureDate] 
+2025-05-14 10:13:22.7841 INFO Executed DbCommand (7ms) [Parameters=[@__model_TourId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+FROM [Tours] AS [t]
+WHERE [t].[TourId] = @__model_TourId_0 
+2025-05-14 10:13:22.8038 INFO Executed DbCommand (8ms) [Parameters=[@__model_TourId_0='?' (DbType = Int32), @__parsedDepartureDate_Date_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [t].[TourScheduleId], [t].[DepartureDate], [t].[IsDeleted], [t].[RemainingSlot], [t].[ReturnDate], [t].[TourId]
+FROM [TourSchedules] AS [t]
+WHERE [t].[TourId] = @__model_TourId_0 AND CONVERT(date, [t].[DepartureDate]) = @__parsedDepartureDate_Date_1 
+2025-05-14 10:13:22.8323 INFO Executed DbCommand (18ms) [Parameters=[@__model_Email_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__model_Email_0 
+2025-05-14 10:13:23.0423 INFO Executed DbCommand (21ms) [Parameters=[@p0='?' (Size = 200), @p1='?' (Size = 200), @p2='?' (Size = 200), @p3='?' (Size = 200), @p4='?' (Size = 200), @p5='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Address], [Email], [FullName], [Password], [Phone], [Role])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5); 
+2025-05-14 10:13:23.1878 INFO Executed DbCommand (28ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 200), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p11='?' (DbType = Int32), @p10='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Bookings] ([AdultQuantity], [BookingDate], [ChildQuantity], [DepartureDate], [PaymentMethod], [SpecialRequest], [TotalPrice], [TourId], [TourScheduleId], [UserId])
+OUTPUT INSERTED.[BookingId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+UPDATE [TourSchedules] SET [RemainingSlot] = @p10
+OUTPUT 1
+WHERE [TourScheduleId] = @p11; 
+2025-05-14 10:13:23.2046 INFO Đặt tour thành công – TourID: 36, Tên tour: "Tour Ai Cập 7N6Đ – Cairo – Luxor", Ngày đi: "25/10/2025", Người đặt: "Dương Phước Thuận", Email: "ptduong394@gmail.com", Số điện thoại: "0367934564", Địa chỉ: "Tờ bản đồ số 7, Ấp Đồng Tràm, Xã Long Thạnh, Huyện Giồng Riềng, Kiên Giang", Người lớn: 2, Trẻ em: 1, Tổng tiền: "127,000,000" đ, Thanh toán: "MoMo" 
+2025-05-14 10:13:23.2235 INFO Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 10:13:23.2235 INFO Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[AdultPrice], [t1].[Capacity], [t1].[CategoryId], [t1].[ChildPrice], [t1].[Description], [t1].[Destination], [t1].[Duration], [t1].[Itinerary], [t1].[Title], [t1].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN [TourSchedules] AS [t0] ON [t1].[TourId] = [t0].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId] 
+2025-05-14 10:13:23.2385 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CONVERT(varchar(11), [c].[CategoryId]) AS [Value], [c].[CategoryName] AS [Text]
+FROM [Categories] AS [c] 
+2025-05-14 10:13:23.2385 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t0].[Destination]
+FROM (
+    SELECT DISTINCT [t].[Destination]
+    FROM [Tours] AS [t]
+) AS [t0]
+ORDER BY [t0].[Destination] 
+2025-05-14 10:13:23.6490 INFO Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 10:13:23.6760 INFO Executed DbCommand (23ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t1].[TourId], [t1].[Title], [t1].[Destination], [t1].[Duration], [t1].[Capacity], [t1].[AdultPrice], [t3].[DepartureDate], [t3].[TourScheduleId], [t1].[c]
+FROM (
+    SELECT [t].[TourId], [t].[Title], [t].[Destination], [t].[Duration], [t].[Capacity], [t].[AdultPrice], COALESCE((
+        SELECT TOP(1) [i].[Url]
+        FROM [Images] AS [i]
+        WHERE [i].[TourId] = [t].[TourId] AND [i].[DayNumber] = 0), N'assets/images/no-image.jpg') AS [c]
+    FROM [Tours] AS [t]
+    ORDER BY [t].[Title]
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t1]
+LEFT JOIN (
+    SELECT [t2].[DepartureDate], [t2].[TourScheduleId], [t2].[TourId]
+    FROM (
+        SELECT [t0].[DepartureDate], [t0].[TourScheduleId], [t0].[TourId], ROW_NUMBER() OVER(PARTITION BY [t0].[TourId] ORDER BY [t0].[DepartureDate]) AS [row]
+        FROM [TourSchedules] AS [t0]
+        WHERE [t0].[IsDeleted] = CAST(0 AS bit)
+    ) AS [t2]
+    WHERE [t2].[row] <= 3
+) AS [t3] ON [t1].[TourId] = [t3].[TourId]
+ORDER BY [t1].[Title], [t1].[TourId], [t3].[TourId], [t3].[DepartureDate] 
+2025-05-14 10:13:39.3808 INFO Executed DbCommand (7ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0 
+2025-05-14 10:13:39.7741 INFO Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0 
+2025-05-14 10:13:39.8081 INFO Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0 
+2025-05-14 10:13:39.8142 INFO Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0 
+2025-05-14 10:13:39.8142 INFO Executed DbCommand (4ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0 
+2025-05-14 10:13:39.8484 INFO Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0 
+2025-05-14 10:13:39.8484 INFO Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0 
+2025-05-14 10:13:39.8484 INFO Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0 
+2025-05-14 10:13:39.8484 INFO Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0 
+2025-05-14 10:13:39.8592 INFO Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0 
+2025-05-14 10:13:40.1100 INFO Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0 
+2025-05-14 10:13:40.1100 WARN admin 
+2025-05-14 10:13:43.6890 INFO Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[Role] <> N'admin' 
+2025-05-14 10:13:43.7029 INFO Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Role] <> N'admin'
+ORDER BY [u].[UserId]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY 
+2025-05-14 10:13:44.2547 INFO Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b] 
+2025-05-14 10:13:44.3010 INFO Executed DbCommand (16ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [b0].[BookingId], [b0].[AdultQuantity], [b0].[BookingDate], [b0].[ChildQuantity], [b0].[DepartureDate], [b0].[PaymentMethod], [b0].[SpecialRequest], [b0].[TotalPrice], [b0].[TourId], [b0].[TourScheduleId], [b0].[UserId], [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role], [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [b].[BookingId], [b].[AdultQuantity], [b].[BookingDate], [b].[ChildQuantity], [b].[DepartureDate], [b].[PaymentMethod], [b].[SpecialRequest], [b].[TotalPrice], [b].[TourId], [b].[TourScheduleId], [b].[UserId]
+    FROM [Bookings] AS [b]
+    ORDER BY [b].[BookingDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [b0]
+INNER JOIN [Users] AS [u] ON [b0].[UserId] = [u].[UserId]
+INNER JOIN [Tours] AS [t] ON [b0].[TourId] = [t].[TourId]
+LEFT JOIN [TourSchedules] AS [t0] ON [b0].[TourScheduleId] = [t0].[TourScheduleId]
+ORDER BY [b0].[BookingDate] DESC 
+2025-05-14 10:13:44.4267 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b] 
+2025-05-14 10:13:44.4625 INFO Executed DbCommand (9ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [b0].[BookingId], [b0].[AdultQuantity], [b0].[BookingDate], [b0].[ChildQuantity], [b0].[DepartureDate], [b0].[PaymentMethod], [b0].[SpecialRequest], [b0].[TotalPrice], [b0].[TourId], [b0].[TourScheduleId], [b0].[UserId], [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role], [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [b].[BookingId], [b].[AdultQuantity], [b].[BookingDate], [b].[ChildQuantity], [b].[DepartureDate], [b].[PaymentMethod], [b].[SpecialRequest], [b].[TotalPrice], [b].[TourId], [b].[TourScheduleId], [b].[UserId]
+    FROM [Bookings] AS [b]
+    ORDER BY [b].[BookingId] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [b0]
+INNER JOIN [Users] AS [u] ON [b0].[UserId] = [u].[UserId]
+INNER JOIN [Tours] AS [t] ON [b0].[TourId] = [t].[TourId]
+LEFT JOIN [TourSchedules] AS [t0] ON [b0].[TourScheduleId] = [t0].[TourScheduleId]
+ORDER BY [b0].[BookingId] DESC 
+2025-05-14 10:13:49.0586 INFO Executed DbCommand (12ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [b].[BookingId], [b].[AdultQuantity], [b].[BookingDate], [b].[ChildQuantity], [b].[DepartureDate], [b].[PaymentMethod], [b].[SpecialRequest], [b].[TotalPrice], [b].[TourId], [b].[TourScheduleId], [b].[UserId], [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role], [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+FROM [Bookings] AS [b]
+INNER JOIN [Users] AS [u] ON [b].[UserId] = [u].[UserId]
+INNER JOIN [Tours] AS [t] ON [b].[TourId] = [t].[TourId]
+WHERE [b].[BookingId] = @__id_0 
+2025-05-14 10:13:49.0692 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role]
+FROM [Users] AS [u] 
+2025-05-14 10:13:49.0822 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport]
+FROM [Tours] AS [t] 
+2025-05-14 10:13:49.0988 INFO Executed DbCommand (4ms) [Parameters=[@__booking_TourId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [t].[TourScheduleId], [t].[DepartureDate], [t].[IsDeleted], [t].[RemainingSlot], [t].[ReturnDate], [t].[TourId]
+FROM [TourSchedules] AS [t]
+WHERE [t].[TourId] = @__booking_TourId_0
+ORDER BY [t].[DepartureDate] 
+2025-05-14 10:13:56.7518 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b] 
+2025-05-14 10:13:56.7518 INFO Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [b0].[BookingId], [b0].[AdultQuantity], [b0].[BookingDate], [b0].[ChildQuantity], [b0].[DepartureDate], [b0].[PaymentMethod], [b0].[SpecialRequest], [b0].[TotalPrice], [b0].[TourId], [b0].[TourScheduleId], [b0].[UserId], [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role], [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [b].[BookingId], [b].[AdultQuantity], [b].[BookingDate], [b].[ChildQuantity], [b].[DepartureDate], [b].[PaymentMethod], [b].[SpecialRequest], [b].[TotalPrice], [b].[TourId], [b].[TourScheduleId], [b].[UserId]
+    FROM [Bookings] AS [b]
+    ORDER BY [b].[BookingDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [b0]
+INNER JOIN [Users] AS [u] ON [b0].[UserId] = [u].[UserId]
+INNER JOIN [Tours] AS [t] ON [b0].[TourId] = [t].[TourId]
+LEFT JOIN [TourSchedules] AS [t0] ON [b0].[TourScheduleId] = [t0].[TourScheduleId]
+ORDER BY [b0].[BookingDate] DESC 
+2025-05-14 10:13:56.8123 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b] 
+2025-05-14 10:13:56.8123 INFO Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [b0].[BookingId], [b0].[AdultQuantity], [b0].[BookingDate], [b0].[ChildQuantity], [b0].[DepartureDate], [b0].[PaymentMethod], [b0].[SpecialRequest], [b0].[TotalPrice], [b0].[TourId], [b0].[TourScheduleId], [b0].[UserId], [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role], [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [b].[BookingId], [b].[AdultQuantity], [b].[BookingDate], [b].[ChildQuantity], [b].[DepartureDate], [b].[PaymentMethod], [b].[SpecialRequest], [b].[TotalPrice], [b].[TourId], [b].[TourScheduleId], [b].[UserId]
+    FROM [Bookings] AS [b]
+    ORDER BY [b].[BookingId] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [b0]
+INNER JOIN [Users] AS [u] ON [b0].[UserId] = [u].[UserId]
+INNER JOIN [Tours] AS [t] ON [b0].[TourId] = [t].[TourId]
+LEFT JOIN [TourSchedules] AS [t0] ON [b0].[TourScheduleId] = [t0].[TourScheduleId]
+ORDER BY [b0].[BookingId] DESC 
+2025-05-14 10:14:01.9779 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b] 
+2025-05-14 10:14:01.9993 INFO Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [b0].[BookingId], [b0].[AdultQuantity], [b0].[BookingDate], [b0].[ChildQuantity], [b0].[DepartureDate], [b0].[PaymentMethod], [b0].[SpecialRequest], [b0].[TotalPrice], [b0].[TourId], [b0].[TourScheduleId], [b0].[UserId], [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role], [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [b].[BookingId], [b].[AdultQuantity], [b].[BookingDate], [b].[ChildQuantity], [b].[DepartureDate], [b].[PaymentMethod], [b].[SpecialRequest], [b].[TotalPrice], [b].[TourId], [b].[TourScheduleId], [b].[UserId]
+    FROM [Bookings] AS [b]
+    ORDER BY [b].[BookingId] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+) AS [b0]
+INNER JOIN [Users] AS [u] ON [b0].[UserId] = [u].[UserId]
+INNER JOIN [Tours] AS [t] ON [b0].[TourId] = [t].[TourId]
+LEFT JOIN [TourSchedules] AS [t0] ON [b0].[TourScheduleId] = [t0].[TourScheduleId]
+ORDER BY [b0].[BookingId] DESC 
+2025-05-14 10:14:03.2315 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b] 
+2025-05-14 10:14:03.2397 INFO Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [b0].[BookingId], [b0].[AdultQuantity], [b0].[BookingDate], [b0].[ChildQuantity], [b0].[DepartureDate], [b0].[PaymentMethod], [b0].[SpecialRequest], [b0].[TotalPrice], [b0].[TourId], [b0].[TourScheduleId], [b0].[UserId], [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role], [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [b].[BookingId], [b].[AdultQuantity], [b].[BookingDate], [b].[ChildQuantity], [b].[DepartureDate], [b].[PaymentMethod], [b].[SpecialRequest], [b].[TotalPrice], [b].[TourId], [b].[TourScheduleId], [b].[UserId]
+    FROM [Bookings] AS [b]
+    ORDER BY [b].[BookingId] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [b0]
+INNER JOIN [Users] AS [u] ON [b0].[UserId] = [u].[UserId]
+INNER JOIN [Tours] AS [t] ON [b0].[TourId] = [t].[TourId]
+LEFT JOIN [TourSchedules] AS [t0] ON [b0].[TourScheduleId] = [t0].[TourScheduleId]
+ORDER BY [b0].[BookingId] DESC 
+2025-05-14 10:14:03.7847 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b] 
+2025-05-14 10:14:03.7847 INFO Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [b0].[BookingId], [b0].[AdultQuantity], [b0].[BookingDate], [b0].[ChildQuantity], [b0].[DepartureDate], [b0].[PaymentMethod], [b0].[SpecialRequest], [b0].[TotalPrice], [b0].[TourId], [b0].[TourScheduleId], [b0].[UserId], [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role], [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [b].[BookingId], [b].[AdultQuantity], [b].[BookingDate], [b].[ChildQuantity], [b].[DepartureDate], [b].[PaymentMethod], [b].[SpecialRequest], [b].[TotalPrice], [b].[TourId], [b].[TourScheduleId], [b].[UserId]
+    FROM [Bookings] AS [b]
+    ORDER BY [b].[BookingId] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [b0]
+INNER JOIN [Users] AS [u] ON [b0].[UserId] = [u].[UserId]
+INNER JOIN [Tours] AS [t] ON [b0].[TourId] = [t].[TourId]
+LEFT JOIN [TourSchedules] AS [t0] ON [b0].[TourScheduleId] = [t0].[TourScheduleId]
+ORDER BY [b0].[BookingId] DESC 
+2025-05-14 10:14:07.3254 INFO Executed DbCommand (6ms) [Parameters=[@__name_0_contains='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b]
+INNER JOIN [Users] AS [u] ON [b].[UserId] = [u].[UserId]
+WHERE [u].[FullName] LIKE @__name_0_contains ESCAPE N'\' 
+2025-05-14 10:14:07.3502 INFO Executed DbCommand (7ms) [Parameters=[@__name_0_contains='?' (Size = 200), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[BookingId], [s].[AdultQuantity], [s].[BookingDate], [s].[ChildQuantity], [s].[DepartureDate], [s].[PaymentMethod], [s].[SpecialRequest], [s].[TotalPrice], [s].[TourId], [s].[TourScheduleId], [s].[UserId], [s].[UserId0], [s].[Address], [s].[Email], [s].[FullName], [s].[Password], [s].[Phone], [s].[Role], [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [b].[BookingId], [b].[AdultQuantity], [b].[BookingDate], [b].[ChildQuantity], [b].[DepartureDate], [b].[PaymentMethod], [b].[SpecialRequest], [b].[TotalPrice], [b].[TourId], [b].[TourScheduleId], [b].[UserId], [u].[UserId] AS [UserId0], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role]
+    FROM [Bookings] AS [b]
+    INNER JOIN [Users] AS [u] ON [b].[UserId] = [u].[UserId]
+    WHERE [u].[FullName] LIKE @__name_0_contains ESCAPE N'\'
+    ORDER BY [b].[BookingId] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [s]
+INNER JOIN [Tours] AS [t] ON [s].[TourId] = [t].[TourId]
+LEFT JOIN [TourSchedules] AS [t0] ON [s].[TourScheduleId] = [t0].[TourScheduleId]
+ORDER BY [s].[BookingId] DESC 
+2025-05-14 10:14:08.0725 INFO Executed DbCommand (4ms) [Parameters=[@__name_0_contains='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b]
+INNER JOIN [Users] AS [u] ON [b].[UserId] = [u].[UserId]
+WHERE [u].[FullName] LIKE @__name_0_contains ESCAPE N'\' 
+2025-05-14 10:14:08.0725 INFO Executed DbCommand (1ms) [Parameters=[@__name_0_contains='?' (Size = 200), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[BookingId], [s].[AdultQuantity], [s].[BookingDate], [s].[ChildQuantity], [s].[DepartureDate], [s].[PaymentMethod], [s].[SpecialRequest], [s].[TotalPrice], [s].[TourId], [s].[TourScheduleId], [s].[UserId], [s].[UserId0], [s].[Address], [s].[Email], [s].[FullName], [s].[Password], [s].[Phone], [s].[Role], [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [b].[BookingId], [b].[AdultQuantity], [b].[BookingDate], [b].[ChildQuantity], [b].[DepartureDate], [b].[PaymentMethod], [b].[SpecialRequest], [b].[TotalPrice], [b].[TourId], [b].[TourScheduleId], [b].[UserId], [u].[UserId] AS [UserId0], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role]
+    FROM [Bookings] AS [b]
+    INNER JOIN [Users] AS [u] ON [b].[UserId] = [u].[UserId]
+    WHERE [u].[FullName] LIKE @__name_0_contains ESCAPE N'\'
+    ORDER BY [b].[BookingId] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [s]
+INNER JOIN [Tours] AS [t] ON [s].[TourId] = [t].[TourId]
+LEFT JOIN [TourSchedules] AS [t0] ON [s].[TourScheduleId] = [t0].[TourScheduleId]
+ORDER BY [s].[BookingId] DESC 
+2025-05-14 10:14:08.8447 INFO Executed DbCommand (2ms) [Parameters=[@__name_0_contains='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b]
+INNER JOIN [Users] AS [u] ON [b].[UserId] = [u].[UserId]
+WHERE [u].[FullName] LIKE @__name_0_contains ESCAPE N'\' 
+2025-05-14 10:14:08.8447 INFO Executed DbCommand (1ms) [Parameters=[@__name_0_contains='?' (Size = 200), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[BookingId], [s].[AdultQuantity], [s].[BookingDate], [s].[ChildQuantity], [s].[DepartureDate], [s].[PaymentMethod], [s].[SpecialRequest], [s].[TotalPrice], [s].[TourId], [s].[TourScheduleId], [s].[UserId], [s].[UserId0], [s].[Address], [s].[Email], [s].[FullName], [s].[Password], [s].[Phone], [s].[Role], [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [b].[BookingId], [b].[AdultQuantity], [b].[BookingDate], [b].[ChildQuantity], [b].[DepartureDate], [b].[PaymentMethod], [b].[SpecialRequest], [b].[TotalPrice], [b].[TourId], [b].[TourScheduleId], [b].[UserId], [u].[UserId] AS [UserId0], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role]
+    FROM [Bookings] AS [b]
+    INNER JOIN [Users] AS [u] ON [b].[UserId] = [u].[UserId]
+    WHERE [u].[FullName] LIKE @__name_0_contains ESCAPE N'\'
+    ORDER BY [b].[BookingId] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [s]
+INNER JOIN [Tours] AS [t] ON [s].[TourId] = [t].[TourId]
+LEFT JOIN [TourSchedules] AS [t0] ON [s].[TourScheduleId] = [t0].[TourScheduleId]
+ORDER BY [s].[BookingId] DESC 
+2025-05-14 10:14:10.7116 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b] 
+2025-05-14 10:14:10.7116 INFO Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [b0].[BookingId], [b0].[AdultQuantity], [b0].[BookingDate], [b0].[ChildQuantity], [b0].[DepartureDate], [b0].[PaymentMethod], [b0].[SpecialRequest], [b0].[TotalPrice], [b0].[TourId], [b0].[TourScheduleId], [b0].[UserId], [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role], [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [b].[BookingId], [b].[AdultQuantity], [b].[BookingDate], [b].[ChildQuantity], [b].[DepartureDate], [b].[PaymentMethod], [b].[SpecialRequest], [b].[TotalPrice], [b].[TourId], [b].[TourScheduleId], [b].[UserId]
+    FROM [Bookings] AS [b]
+    ORDER BY [b].[BookingId] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [b0]
+INNER JOIN [Users] AS [u] ON [b0].[UserId] = [u].[UserId]
+INNER JOIN [Tours] AS [t] ON [b0].[TourId] = [t].[TourId]
+LEFT JOIN [TourSchedules] AS [t0] ON [b0].[TourScheduleId] = [t0].[TourScheduleId]
+ORDER BY [b0].[BookingId] DESC 
+2025-05-14 10:14:18.2293 INFO Executed DbCommand (6ms) [Parameters=[@__email_0_contains='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b]
+INNER JOIN [Users] AS [u] ON [b].[UserId] = [u].[UserId]
+WHERE [u].[Email] LIKE @__email_0_contains ESCAPE N'\' 
+2025-05-14 10:14:18.2553 INFO Executed DbCommand (8ms) [Parameters=[@__email_0_contains='?' (Size = 200), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[BookingId], [s].[AdultQuantity], [s].[BookingDate], [s].[ChildQuantity], [s].[DepartureDate], [s].[PaymentMethod], [s].[SpecialRequest], [s].[TotalPrice], [s].[TourId], [s].[TourScheduleId], [s].[UserId], [s].[UserId0], [s].[Address], [s].[Email], [s].[FullName], [s].[Password], [s].[Phone], [s].[Role], [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [b].[BookingId], [b].[AdultQuantity], [b].[BookingDate], [b].[ChildQuantity], [b].[DepartureDate], [b].[PaymentMethod], [b].[SpecialRequest], [b].[TotalPrice], [b].[TourId], [b].[TourScheduleId], [b].[UserId], [u].[UserId] AS [UserId0], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role]
+    FROM [Bookings] AS [b]
+    INNER JOIN [Users] AS [u] ON [b].[UserId] = [u].[UserId]
+    WHERE [u].[Email] LIKE @__email_0_contains ESCAPE N'\'
+    ORDER BY [b].[BookingId] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [s]
+INNER JOIN [Tours] AS [t] ON [s].[TourId] = [t].[TourId]
+LEFT JOIN [TourSchedules] AS [t0] ON [s].[TourScheduleId] = [t0].[TourScheduleId]
+ORDER BY [s].[BookingId] DESC 
+2025-05-14 10:14:20.3696 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b] 
+2025-05-14 10:14:20.3725 INFO Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [b0].[BookingId], [b0].[AdultQuantity], [b0].[BookingDate], [b0].[ChildQuantity], [b0].[DepartureDate], [b0].[PaymentMethod], [b0].[SpecialRequest], [b0].[TotalPrice], [b0].[TourId], [b0].[TourScheduleId], [b0].[UserId], [u].[UserId], [u].[Address], [u].[Email], [u].[FullName], [u].[Password], [u].[Phone], [u].[Role], [t].[TourId], [t].[AdultPrice], [t].[Capacity], [t].[CategoryId], [t].[ChildPrice], [t].[Description], [t].[Destination], [t].[Duration], [t].[Itinerary], [t].[Title], [t].[Transport], [t0].[TourScheduleId], [t0].[DepartureDate], [t0].[IsDeleted], [t0].[RemainingSlot], [t0].[ReturnDate], [t0].[TourId]
+FROM (
+    SELECT [b].[BookingId], [b].[AdultQuantity], [b].[BookingDate], [b].[ChildQuantity], [b].[DepartureDate], [b].[PaymentMethod], [b].[SpecialRequest], [b].[TotalPrice], [b].[TourId], [b].[TourScheduleId], [b].[UserId]
+    FROM [Bookings] AS [b]
+    ORDER BY [b].[BookingId] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [b0]
+INNER JOIN [Users] AS [u] ON [b0].[UserId] = [u].[UserId]
+INNER JOIN [Tours] AS [t] ON [b0].[TourId] = [t].[TourId]
+LEFT JOIN [TourSchedules] AS [t0] ON [b0].[TourScheduleId] = [t0].[TourScheduleId]
+ORDER BY [b0].[BookingId] DESC 
+2025-05-14 10:15:35.1976 INFO Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 
+2025-05-14 10:18:02.3694 INFO Executed DbCommand (17ms) [Parameters=[@__year_Value_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b]
+WHERE DATEPART(year, [b].[DepartureDate]) = @__year_Value_0 
+2025-05-14 10:18:02.4597 INFO Executed DbCommand (5ms) [Parameters=[@__year_Value_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT COALESCE(SUM([b].[TotalPrice]), 0.0)
+FROM [Bookings] AS [b]
+WHERE DATEPART(year, [b].[DepartureDate]) = @__year_Value_0 
+2025-05-14 10:18:02.6288 INFO Executed DbCommand (17ms) [Parameters=[@__year_Value_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName] AS [Region], COUNT(*) AS [Count]
+FROM [Bookings] AS [b]
+INNER JOIN [Tours] AS [t] ON [b].[TourId] = [t].[TourId]
+INNER JOIN [Categories] AS [c] ON [t].[CategoryId] = [c].[CategoryId]
+WHERE DATEPART(year, [b].[DepartureDate]) = @__year_Value_0
+GROUP BY [c].[CategoryName] 
+2025-05-14 10:18:02.6500 INFO Executed DbCommand (8ms) [Parameters=[@__year_Value_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [b].[PaymentMethod] AS [Method], COUNT(*) AS [Count]
+FROM [Bookings] AS [b]
+WHERE DATEPART(year, [b].[DepartureDate]) = @__year_Value_0
+GROUP BY [b].[PaymentMethod] 
+2025-05-14 10:18:02.6786 INFO Executed DbCommand (8ms) [Parameters=[@__year_Value_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [b0].[Key] AS [Month], COALESCE(SUM([b0].[TotalPrice]), 0.0) AS [Revenue]
+FROM (
+    SELECT [b].[TotalPrice], DATEPART(month, [b].[DepartureDate]) AS [Key]
+    FROM [Bookings] AS [b]
+    WHERE DATEPART(year, [b].[DepartureDate]) = @__year_Value_0
+) AS [b0]
+GROUP BY [b0].[Key] 
+2025-05-14 10:18:02.6930 INFO Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tours] AS [t] 

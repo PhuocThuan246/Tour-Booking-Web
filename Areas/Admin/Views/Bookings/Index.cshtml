@@ -1,0 +1,171 @@
+﻿@{
+    ViewData["Title"] = "Quản lý Đơn đặt tour";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<!-- Anti-forgery token để lấy bằng JavaScript -->
+<form id="antiForgeryTokenForm" style="display:none;">
+    @Html.AntiForgeryToken()
+</form>
+<div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">📋 Danh sách Booking</h2>
+    </div>
+
+<!-- Thanh tìm kiếm -->
+<form id="searchForm" class="row gx-3 gy-2 align-items-end mb-4">
+    <div class="col-md-3">
+        <label class="form-label">👤 Người đặt</label>
+        <input type="text" name="name" class="form-control" placeholder="Nhập tên người đặt...">
+    </div>
+    <div class="col-md-3">
+        <label class="form-label">📧 Email</label>
+        <input type="text" name="email" class="form-control" placeholder="Nhập email người đặt...">
+    </div>
+    <div class="col-md-3">
+        <label class="form-label">🧳 Tên tour</label>
+        <input type="text" name="tour" class="form-control" placeholder="Nhập tên tour...">
+    </div>
+    <div class="col-md-2 d-grid">
+        <label class="form-label invisible">.</label>
+        <button type="button" class="btn btn-primary" onclick="fetchBookings(1)">
+            <i class="fas fa-search me-1"></i> Tìm
+        </button>
+    </div>
+</form>
+
+
+    <!-- Bảng danh sách -->
+    <div class="card shadow-sm border-0">
+        <div class="card-body p-0">
+            <table class="table table-hover table-striped table-bordered mb-0">
+                <thead class="thead-dark text-white text-center">
+                    <tr>
+                        <th><a href="#" onclick="setSort('id')" class="text-white text-decoration-none">ID <i class="fas fa-sort"></i></a></th>
+                        <th>Người đặt</th>
+                        <th>Ngày đặt</th>
+                        <th>Email</th>
+                        <th>Tour</th>
+                        <th>Ngày đi</th>
+                        <th>Người lớn</th>
+                        <th>Trẻ em</th>
+                        <th>Tổng tiền</th>
+                        <th>Thanh toán</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody id="bookingBody"></tbody>
+            </table>
+            <div id="pagination" class="mt-3 d-flex justify-content-center"></div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+            const nameInput = document.querySelector("input[name='name']");
+            const bookingBody = document.getElementById("bookingBody");
+            const pagination = document.getElementById("pagination");
+
+            let debounceTimer;
+        let currentSortOrder = 'id_desc';
+
+            function setSort(sortKey) {
+            if (currentSortOrder === sortKey) {
+                currentSortOrder = sortKey + "_desc";
+            } else {
+                currentSortOrder = sortKey;
+            }
+            fetchBookings(1);
+        }
+
+  function fetchBookings(page = 1) {
+    const name = document.querySelector("input[name='name']").value.trim();
+    const email = document.querySelector("input[name='email']").value.trim();
+    const tour = document.querySelector("input[name='tour']").value.trim();
+
+    const url = `/Admin/Bookings/SearchJson?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&tour=${encodeURIComponent(tour)}&page=${page}&sortOrder=${currentSortOrder}`;
+
+    fetch(url)
+        .then(res => res.json())
+        .then(result => {
+            const data = result.data;
+            const currentPage = result.currentPage;
+            const totalPages = result.totalPages;
+
+            bookingBody.innerHTML = "";
+            if (data.length === 0) {
+                bookingBody.innerHTML = `<tr><td colspan="11" class="text-center text-muted py-4">Không có đơn đặt tour nào.</td></tr>`;
+            } else {
+                data.forEach((b) => {
+                    const row = `
+                        <tr class="text-center">
+                            <td>${b.bookingId}</td>
+                            <td>${b.fullName}</td>
+                            <td>${b.bookingDate}</td>
+                            <td>${b.email}</td>
+                            <td>${b.tourTitle}</td>
+                            <td>${b.departureDate} - ${b.returnDate}</td>
+                            <td>${b.adultQuantity}</td>
+                            <td>${b.childQuantity}</td>
+                            <td>${b.totalPrice}</td>
+                            <td>${b.paymentMethod}</td>
+                            <td>
+                                <a href="/Admin/Bookings/Edit/${b.bookingId}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+                                <form method="post" action="/Admin/Bookings/Delete/${b.bookingId}" style="display:inline;" onsubmit="return confirm('Xóa đơn đặt này?');">
+                                    <input type="hidden" name="__RequestVerificationToken" value="${getAntiForgeryToken()}" />
+                                    <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>`;
+                    bookingBody.innerHTML += row;
+                });
+            }
+
+            renderPagination(currentPage, totalPages);
+        });
+}
+
+
+            function renderPagination(currentPage, totalPages) {
+                pagination.innerHTML = "";
+
+                if (totalPages <= 1) return;
+
+                let html = `<nav><ul class="pagination">`;
+                for (let i = 1; i <= totalPages; i++) {
+                    html += `<li class="page-item ${i === currentPage ? 'active' : ''}">
+                                <a href="#" class="page-link" data-page="${i}">${i}</a>
+                            </li>`;
+                }
+                html += `</ul></nav>`;
+                pagination.innerHTML = html;
+
+                pagination.querySelectorAll("a.page-link").forEach(link => {
+                    link.addEventListener("click", e => {
+                        e.preventDefault();
+                        const page = parseInt(link.dataset.page);
+                        fetchBookings(page);
+                    });
+                });
+            }
+
+            const emailInput = document.querySelector("input[name='email']");
+            const tourInput = document.querySelector("input[name='tour']");
+
+            // Gộp tất cả các trường cần theo dõi
+            [nameInput, emailInput, tourInput].forEach(input => {
+                input.addEventListener("input", () => {
+                    clearTimeout(debounceTimer);
+                    debounceTimer = setTimeout(() => fetchBookings(1), 400);
+                });
+            });
+
+
+            document.addEventListener("DOMContentLoaded", () => fetchBookings(1));
+            function getAntiForgeryToken() {
+                return document.querySelector('input[name="__RequestVerificationToken"]').value;
+            }
+
+    </script>
+}

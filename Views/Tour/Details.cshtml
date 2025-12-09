@@ -1,0 +1,331 @@
+﻿@model TourBookingWeb.Models.Tour
+@inject TourBookingWeb.Data.TourDBContext _ctx
+@using TourBookingWeb.Helpers
+
+@{
+    ViewData["Title"] = Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    /* --- Lấy toàn bộ ảnh của tour --- */
+    var allImgs = _ctx.Images.Where(i => i.TourId == Model.TourId).ToList();
+
+    /* Ảnh đại diện (DayNumber == 0) hoặc ảnh dự phòng */
+    var firstImg = allImgs.FirstOrDefault(i => i.DayNumber == 0)?.Url ?? "assets/images/no-image.jpg";
+
+    /* Ảnh theo ngày > 0  */
+    var dayImgMap = allImgs
+        .Where(i => i.DayNumber.HasValue && i.DayNumber > 0)
+        .ToDictionary(i => i.DayNumber!.Value, i => i.Url);
+
+    /* Tách lịch trình */
+    var itineraryLines = (Model.Itinerary ?? string.Empty)
+        .Split('\n', System.StringSplitOptions.RemoveEmptyEntries);
+    var backUrl = Url.AppendQueryString(Url.Action("Index", "Tour"), Context.Request.Query);
+}
+
+<!-- Hero banner màu -->
+
+<div id="heroSlider" class="carousel slide mb-0 position-relative" data-bs-ride="carousel">
+    <!-- Static Text Overlay -->
+    <div class="position-absolute top-50 start-50 translate-middle text-center z-3 hero-text-overlay">
+        <h1 class="display-3 text-white animated slideInDown">Chi tiết tour</h1>
+    </div>
+
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="container-fluid hero-header" style="height: 200px; background: url('/img/background/bg1.jpg') center/cover no-repeat;"></div>
+        </div>
+        <div class="carousel-item">
+            <div class="container-fluid hero-header" style="height: 200px; background: url('/img/background/bg2.jpg') center/cover no-repeat;"></div>
+        </div>
+        <div class="carousel-item">
+            <div class="container-fluid hero-header" style="height: 200px; background: url('/img/background/bg3.jpg') center/cover no-repeat;"></div>
+        </div>
+    </div>
+</div>
+
+<a href="@backUrl" class="btn btn-light border rounded-pill px-4 py-2 d-inline-flex align-items-center shadow-sm mb-4 hover-shadow">
+    <i class="fas fa-arrow-left me-2 text-primary"></i>
+    <span class="fw-semibold text-dark">Quay lại kết quả tìm kiếm</span>
+</a>
+
+<div class="container my-5">
+    <h1 class="display-5 fw-bold text-center mb-4">@Model.Title</h1>
+
+    <div class="row g-4">
+        <!-- LEFT COLUMN -->
+        <div class="col-lg-8">
+            <!-- Cover image -->
+            <img src="~/@firstImg" class="w-100 rounded shadow-sm mb-4 object-fit-cover" style="max-height:430px" alt="@Model.Title" />
+
+            <!-- Highlight -->
+            <h3 class="fw-bold mb-3">Điểm nhấn hành trình</h3>
+            <p class="text-muted">@Model.Description</p>
+
+            <!-- Itinerary (full‑width inside left col) -->
+            @if (itineraryLines.Length > 0)
+            {
+                <h3 class="fw-bold my-5 text-center wow fadeInUp">Lịch trình</h3>
+                @for (int i = 0; i < itineraryLines.Length; i++)
+                {
+                    var dayNum = i + 1;
+                    var line = itineraryLines[i];
+                    var title = line.Split(':')[0].Trim();
+                    var detail = line[(line.IndexOf(':') + 1)..].Trim();
+                    var img = dayImgMap.TryGetValue(dayNum, out var u) ? u : "assets/images/no-image.jpg";
+
+                    <div class="row align-items-center g-4 mb-5 wow fadeInUp" data-wow-delay="@($"{i * 0.2:0.0}s")">
+                        <div class="col-md-4">
+                            <img src="~/@img" class="w-100 rounded shadow-sm object-fit-cover" style="height:220px" alt="@title" />
+                        </div>
+                        <div class="col-md-8">
+                            <div class="p-4 bg-white rounded shadow-sm h-100 d-flex flex-column justify-content-center border-start border-4 border-primary">
+                                <h5 class="text-primary fw-bold mb-2">@title</h5>
+                                <p class="text-muted mb-0">@detail</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
+
+                <div class="table-responsive">
+                    @if (Model.Schedules != null && Model.Schedules.Any())
+                    {
+                        <h3 class="mt-5 mb-4 fw-bold text-center text-dark">🛫 Lịch Khởi Hành</h3>
+
+                        <div class="table-responsive">
+                            <table class="table table-bordered align-middle shadow-sm">
+                                <thead class="table-light text-center">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Ngày đi</th>
+                                        <th>Ngày về</th>
+                                        <th>Chỗ còn</th>
+                                        <th>Đặt tour</th>
+                                    </tr>
+                                </thead>
+                            <tbody class="text-center">
+                                @foreach (var (schedule, index) in Model.Schedules.OrderBy(s => s.DepartureDate).Select((s, i) => (s, i)))
+                                {
+                                    <tr>
+                                        <td>@(index + 1)</td>
+                                        <td>@schedule.DepartureDate.ToString("dd/MM/yyyy")</td>
+                                        <td>@schedule.ReturnDate.ToString("dd/MM/yyyy")</td>
+                                        <td>@schedule.RemainingSlot</td>
+                                        <td>
+                                            <form asp-action="BookNow" asp-controller="Tour" method="post">
+                                                <input type="hidden" name="tourId" value="@Model.TourId" />
+                                                <input type="hidden" name="departureDate" value="@schedule.DepartureDate.ToString("dd/MM/yyyy")" />
+                                                <button class="btn btn-success btn-sm">Đặt ngay</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-center text-muted">Không có lịch khởi hành</div>
+                    }
+
+                </div>
+
+
+        </div>
+        <!-- RIGHT COLUMN (sticky) -->
+        <div class="col-lg-4">
+            <div class="card shadow rounded-3 border-0 position-sticky" style="top:80px;">
+                <div class="card-body p-4">
+                    <!-- Title -->
+                    <h4 class="fw-bold text-center mb-4">@Model.Title</h4>
+
+                    <!-- Divider -->
+                    <hr class="my-3">
+
+                    @{
+                        /* Lấy lịch khởi hành sớm nhất của tour (nếu có) */
+                        var nextSchedule = Model.Schedules?
+                        .OrderBy(s => s.DepartureDate)
+                        .FirstOrDefault();
+
+                        var nextDepartStr = nextSchedule != null
+                        ? nextSchedule.DepartureDate.ToString("dd/MM/yyyy")
+                        : "-";
+                    }
+
+                    <!-- Tour Info -->
+                    <ul class="list-unstyled mb-4">
+
+                        <li class="d-flex align-items-center justify-content-between mb-3">
+                            <div><i class="fa fa-clock text-primary me-2"></i> Thời gian</div>
+                            <div class="fw-semibold">@Model.Duration</div>
+                        </li>
+
+                        <li class="d-flex align-items-center justify-content-between mb-3">
+                            <div><i class="fa fa-calendar-alt text-primary me-2"></i> Ngày đi gần nhất</div>
+                            <div class="fw-semibold">@nextDepartStr</div>
+                        </li>
+
+                        <li class="d-flex align-items-center justify-content-between mb-3">
+                            <div><i class="fa fa-map-marker-alt text-primary me-2"></i> Điểm đến</div>
+                            <div class="fw-semibold">@Model.Destination</div>
+                        </li>
+
+                        <li class="d-flex align-items-center justify-content-between mb-3">
+                            <div><i class="fa fa-users text-primary me-2"></i> Sức chứa</div>
+                            <div class="fw-semibold">@Model.Capacity</div>
+                        </li>
+
+                        <li class="d-flex align-items-center justify-content-between">
+                            <div><i class="fa fa-bus text-primary me-2"></i> Phương tiện</div>
+                            <div class="fw-semibold">@Model.Transport</div>
+                        </li>
+
+                    </ul>
+
+
+                    <!-- Giá -->
+                    <div class="text-center mb-3">
+                        <div class="bg-primary bg-gradient text-white rounded-pill py-2 px-3 d-inline-block fs-5 fw-bold">
+                            @($"{Model.AdultPrice:N0} đ")
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Tour nổi bật -->
+    <section class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">🌟 Tour Nổi Bật</h2>
+            <p class="text-muted">Những hành trình được yêu thích nhất</p>
+        </div>
+
+        <div id="featuredToursCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card shadow-sm h-100">
+                                <img src="/img/tours/12/1.jpg" class="card-img-top" alt="Tour Đà Lạt">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tour Đà Lạt 3N2Đ</h5>
+                                    <p class="card-text text-muted">Đà Lạt – thành phố ngàn hoa, luôn mê hoặc du khách bởi tiết trời se lạnh quanh năm</p>
+                                    <a href="/Tour/Details/12" class="btn btn-primary">📅 Đặt ngay</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card shadow-sm h-100">
+                                <img src="/img/tours/29/1.jpg" class="card-img-top" alt="Tour Nha Trang">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tour Trung Quốc 5N4Đ – Bắc Kinh – Vạn Lý Trường Thành</h5>
+                                    <p class="card-text text-muted">Tham quan thủ đô Bắc Kinh, quảng trường Thiên An Môn.</p>
+                                    <a href="/Tour/Details/29" class="btn btn-primary">📅 Đặt ngay</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card shadow-sm h-100">
+                                <img src="/img/tours/1/5.jpg" class="card-img-top" alt="Tour Hà Giang">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tour Hà Giang mùa hoa tam giác mạch 3N2Đ</h5>
+                                    <p class="card-text text-muted">Chinh phục Mã Pí Lèng, mùa hoa tam giác mạch</p>
+                                    <a href="/Tour/Details/1" class="btn btn-primary">📅 Đặt ngay</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card shadow-sm h-100">
+                                <img src="/img/tours/22/1.jpg" class="card-img-top" alt="Tour Huế">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tour Huế - Đà Nẵng - Hội An 4N3Đ</h5>
+                                    <p class="card-text text-muted">Thành phố cổ kính bên dòng Hương</p>
+                                    <a href="/Tour/Details/22" class="btn btn-primary">📅 Đặt ngay</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card shadow-sm h-100">
+                                <img src="/img/tours/31/1.jpg" class="card-img-top" alt="Tour Sapa">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tour Malaysia 4N3Đ – Kuala Lumpur – Genting</h5>
+                                    <p class="card-text text-muted">Tham quan tháp đôi Petronas, cao nguyên Genting, động Batu</p>
+                                    <a href="/Tour/Details/31" class="btn btn-primary">📅 Đặt ngay</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card shadow-sm h-100">
+                                <img src="/img/tours/11/1.jpg" class="card-img-top" alt="Tour Phú Quốc">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tour Phú Quốc 4N3Đ - Thiên đường nghỉ dưỡng</h5>
+                                    <p class="card-text text-muted">Thiên đường biển đảo – Nghỉ dưỡng cao cấp</p>
+                                    <a href="/Tour/Details/11" class="btn btn-primary">📅 Đặt ngay</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Điều khiển -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#featuredToursCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#featuredToursCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <style>
+        #featuredToursCarousel .carousel-control-prev,
+        #featuredToursCarousel .carousel-control-next {
+            width: 5%;
+        }
+
+        #featuredToursCarousel .carousel-control-prev {
+            left: -3%;
+        }
+
+        #featuredToursCarousel .carousel-control-next {
+            right: -3%;
+        }
+
+        /* Đổi icon điều hướng sang màu đen */
+        #featuredToursCarousel .carousel-control-prev-icon,
+        #featuredToursCarousel .carousel-control-next-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 8 8'%3E%3Cpath d='M4.146 0.146a.5.5 0 01.708 0l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708-.708L6.293 4 4.146 1.854a.5.5 0 010-.708z'/%3E%3C/svg%3E");
+        }
+
+        #featuredToursCarousel .carousel-control-prev-icon {
+            transform: rotate(180deg);
+        }
+
+        .hover-shadow:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            transform: translateY(-1px);
+            transition: all 0.2s;
+        }
+
+    </style>
+
+
+
+</div>
+

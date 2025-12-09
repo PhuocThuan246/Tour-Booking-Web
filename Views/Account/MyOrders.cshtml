@@ -1,0 +1,110 @@
+﻿@model IEnumerable<TourBookingWeb.Models.Booking>
+@{
+    ViewData["Title"] = "Đơn hàng của tôi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Banner -->
+<div id="heroSlider" class="carousel slide mb-0 position-relative" data-bs-ride="carousel">
+    <!-- Static Text Overlay -->
+    <div class="position-absolute top-50 start-50 translate-middle text-center z-3 hero-text-overlay">
+        <h1 class="display-3 fw-bold mb-3 text-white">Đơn hàng của tôi</h1>
+    </div>
+
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="container-fluid hero-header" style="height: 300px; background: url('/img/background/bg1.jpg') center/cover no-repeat;"></div>
+        </div>
+        <div class="carousel-item">
+            <div class="container-fluid hero-header" style="height: 300px; background: url('/img/background/bg2.jpg') center/cover no-repeat;"></div>
+        </div>
+        <div class="carousel-item">
+            <div class="container-fluid hero-header" style="height: 300px; background: url('/img/background/bg3.jpg') center/cover no-repeat;"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container my-5">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <div class="fw-bold">@ViewBag.UserEmail</div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <a asp-action="Profile" class="list-group-item @(ViewData["Title"]!.ToString()=="Tài khoản" ? "text-primary" : "")">
+                        <i class="fas fa-user me-1"></i> Hồ sơ cá nhân
+                    </a>
+                    <a asp-action="MyOrders" class="list-group-item @(ViewData["Title"]!.ToString().Contains("Đơn hàng") ? "text-primary" : "")">
+                        <i class="fas fa-receipt me-1"></i> Đơn hàng của tôi
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Nội dung đơn hàng -->
+        <div class="col-md-9">
+            <h4>Đơn hàng của tôi</h4>
+
+            @if (!Model.Any())
+            {
+                <div class="text-center text-muted py-5">
+                    <p class="fs-5">Bạn chưa có đơn đặt tour nào.</p>
+                </div>
+            }
+            else
+            {
+                <table class="table table-bordered table-hover">
+                    <thead class="table-light text-center">
+                        <tr>
+                            <th>STT</th>
+                            <th>Hình ảnh</th>
+                            <th>Đơn hàng</th>
+                            <th>Giá (VNĐ)</th>
+                            <th>Ngày đặt</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            var i = 1;
+                            foreach (var b in Model)
+                            {
+                                <tr>
+                                    <td class="text-center">@i</td>
+                                    <td class="text-center">
+                                        <img src="~/@b.Tour?.Images.FirstOrDefault(i => i.DayNumber == 0)?.Url"
+                                             style="width:100px;height:70px;object-fit:cover"
+                                             onerror="this.src='/img/no-image.png'" />  <!-- fallback nếu lỗi ảnh -->
+                                    </td>
+                                    <td>
+                                        <strong>@b.Tour?.Title</strong><br />
+                                        <span class="text-success">🗓️ Ngày khởi hành: @b.TourSchedule?.DepartureDate.ToString("dd/MM/yyyy")</span><br />
+                                        <span class="text-muted">👥 @b.AdultQuantity Người lớn, @b.ChildQuantity Trẻ em</span>
+                                    </td>
+
+                                    <td class="text-end">@string.Format("{0:N0}", b.TotalPrice)</td>
+                                    <td class="text-center">
+                                        @Html.Raw(b.BookingDate.ToString("dd/MM/yyyy<br/>HH:mm:ss"))
+                                    </td>
+                                    <td class="text-center align-middle">
+                                        <form asp-action="CancelOrder" method="post"
+                                              onsubmit="return confirm('Huỷ đơn này?');">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="id" value="@b.BookingId" />
+                                            <button class="btn btn-sm btn-danger">Huỷ tour</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                i++;
+                            }
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+</div>
+

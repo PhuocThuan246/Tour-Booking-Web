@@ -1,0 +1,1136 @@
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\nlog.config
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\appsettings.Development.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\appsettings.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.staticwebassets.runtime.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.staticwebassets.endpoints.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.exe
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.deps.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.runtimeconfig.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.pdb
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Azure.Core.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Azure.Identity.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Humanizer.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Build.Locator.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Mono.TextTemplating.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\NLog.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\NLog.Extensions.Logging.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.ClientModel.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.CodeDom.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.Convention.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.Hosting.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.Runtime.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.TypedParts.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Drawing.Common.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Formats.Asn1.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.IO.Pipelines.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Memory.Data.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Runtime.Caching.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Security.Permissions.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Text.Json.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Windows.Extensions.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\X.PagedList.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\X.PagedList.EF.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.csproj.AssemblyReference.cache
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.GeneratedMSBuildEditorConfig.editorconfig
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.AssemblyInfoInputs.cache
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.AssemblyInfo.cs
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.csproj.CoreCompileInputs.cache
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.MvcApplicationPartsAssemblyInfo.cs
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.MvcApplicationPartsAssemblyInfo.cache
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.RazorAssemblyInfo.cache
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.RazorAssemblyInfo.cs
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminNavbar.cshtml.rz.scp.css
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminSidebar.cshtml.rz.scp.css
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_ValidationScriptsPartial.cshtml.rz.scp.css
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\bundle\TourBookingWeb.styles.css
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\projectbundle\TourBookingWeb.bundle.scp.css
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.build.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.development.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.TourBookingWeb.Microsoft.AspNetCore.StaticWebAssets.props
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.TourBookingWeb.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.build.TourBookingWeb.props
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.TourBookingWeb.props
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TourBookingWeb.props
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.pack.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBook.25370A4E.Up2Date
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\refint\TourBookingWeb.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.pdb
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.genruntimeconfig.cache
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\ref\TourBookingWeb.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\nlog.config
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\appsettings.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.staticwebassets.runtime.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.staticwebassets.endpoints.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.exe
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.deps.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.runtimeconfig.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.pdb
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Azure.Core.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Humanizer.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Build.Locator.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\NLog.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\NLog.Extensions.Logging.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.ClientModel.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.Convention.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.Hosting.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.Runtime.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.TypedParts.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Drawing.Common.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Formats.Asn1.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Memory.Data.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Runtime.Caching.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Security.Permissions.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\X.PagedList.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\X.PagedList.EF.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.csproj.AssemblyReference.cache
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.AssemblyInfoInputs.cache
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.AssemblyInfo.cs
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.csproj.CoreCompileInputs.cache
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.RazorAssemblyInfo.cache
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.RazorAssemblyInfo.cs
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminNavbar.cshtml.rz.scp.css
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminSidebar.cshtml.rz.scp.css
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_ValidationScriptsPartial.cshtml.rz.scp.css
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\bundle\TourBookingWeb.styles.css
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\projectbundle\TourBookingWeb.bundle.scp.css
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.TourBookingWeb.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.TourBookingWeb.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.build.TourBookingWeb.props
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.TourBookingWeb.props
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TourBookingWeb.props
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBook.25370A4E.Up2Date
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\refint\TourBookingWeb.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.pdb
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.genruntimeconfig.cache
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\ref\TourBookingWeb.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\nlog.config
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\appsettings.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.staticwebassets.endpoints.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.staticwebassets.runtime.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.exe
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.deps.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.runtimeconfig.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.pdb
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Azure.Core.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Humanizer.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Build.Locator.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\NLog.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\NLog.Extensions.Logging.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.ClientModel.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.Convention.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.Hosting.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.Runtime.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.TypedParts.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Drawing.Common.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Formats.Asn1.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Memory.Data.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Runtime.Caching.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Security.Permissions.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\X.PagedList.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\X.PagedList.EF.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.csproj.AssemblyReference.cache
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.AssemblyInfoInputs.cache
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.AssemblyInfo.cs
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.csproj.CoreCompileInputs.cache
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.RazorAssemblyInfo.cache
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.RazorAssemblyInfo.cs
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminNavbar.cshtml.rz.scp.css
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminSidebar.cshtml.rz.scp.css
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_ValidationScriptsPartial.cshtml.rz.scp.css
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\bundle\TourBookingWeb.styles.css
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\projectbundle\TourBookingWeb.bundle.scp.css
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.TourBookingWeb.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.TourBookingWeb.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.build.TourBookingWeb.props
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.TourBookingWeb.props
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TourBookingWeb.props
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBook.25370A4E.Up2Date
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\refint\TourBookingWeb.dll
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.pdb
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.genruntimeconfig.cache
+C:\Users\MY COMPUTER\Downloads\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\ref\TourBookingWeb.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\nlog.config
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\appsettings.Development.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\appsettings.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.staticwebassets.runtime.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.staticwebassets.endpoints.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.exe
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.deps.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.runtimeconfig.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.pdb
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Azure.Core.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Azure.Identity.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Humanizer.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Build.Locator.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\Mono.TextTemplating.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\NLog.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\NLog.Extensions.Logging.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.ClientModel.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.CodeDom.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.Convention.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.Hosting.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.Runtime.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Composition.TypedParts.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Drawing.Common.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Formats.Asn1.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.IO.Pipelines.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Memory.Data.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Runtime.Caching.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Security.Permissions.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Text.Json.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\System.Windows.Extensions.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\X.PagedList.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\X.PagedList.EF.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.csproj.AssemblyReference.cache
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.GeneratedMSBuildEditorConfig.editorconfig
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.AssemblyInfoInputs.cache
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.AssemblyInfo.cs
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.csproj.CoreCompileInputs.cache
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.MvcApplicationPartsAssemblyInfo.cs
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.MvcApplicationPartsAssemblyInfo.cache
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.RazorAssemblyInfo.cache
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.RazorAssemblyInfo.cs
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminNavbar.cshtml.rz.scp.css
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminSidebar.cshtml.rz.scp.css
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_ValidationScriptsPartial.cshtml.rz.scp.css
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\bundle\TourBookingWeb.styles.css
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\scopedcss\projectbundle\TourBookingWeb.bundle.scp.css
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.build.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.development.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.TourBookingWeb.Microsoft.AspNetCore.StaticWebAssets.props
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.TourBookingWeb.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.build.TourBookingWeb.props
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.TourBookingWeb.props
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TourBookingWeb.props
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.pack.json
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBook.25370A4E.Up2Date
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\refint\TourBookingWeb.dll
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.pdb
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.genruntimeconfig.cache
+D:\HK2-2024-2025\Công Nghệ .Net\CuoiKy\TourBookingWeb (1)\TourBookingWeb\TourBookingWeb\obj\Debug\net8.0\ref\TourBookingWeb.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\nlog.config
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\appsettings.json
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.staticwebassets.runtime.json
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.staticwebassets.endpoints.json
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.exe
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.deps.json
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.runtimeconfig.json
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.pdb
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Azure.Core.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Humanizer.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.Build.Locator.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\NLog.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\NLog.Extensions.Logging.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.ClientModel.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.Composition.Convention.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.Composition.Hosting.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.Composition.Runtime.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.Composition.TypedParts.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.Drawing.Common.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.Formats.Asn1.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.Memory.Data.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.Runtime.Caching.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.Security.Permissions.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\X.PagedList.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\X.PagedList.EF.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.csproj.AssemblyReference.cache
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.AssemblyInfoInputs.cache
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.AssemblyInfo.cs
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.csproj.CoreCompileInputs.cache
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.RazorAssemblyInfo.cache
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.RazorAssemblyInfo.cs
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminNavbar.cshtml.rz.scp.css
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminSidebar.cshtml.rz.scp.css
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_ValidationScriptsPartial.cshtml.rz.scp.css
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\scopedcss\bundle\TourBookingWeb.styles.css
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\scopedcss\projectbundle\TourBookingWeb.bundle.scp.css
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.TourBookingWeb.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.TourBookingWeb.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.build.TourBookingWeb.props
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.TourBookingWeb.props
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TourBookingWeb.props
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\TourBook.25370A4E.Up2Date
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\refint\TourBookingWeb.dll
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.pdb
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.genruntimeconfig.cache
+C:\Users\MY COMPUTER\Downloads\52200146_52200157_52200318\52200146_52200157_52200318\TourBookingWeb\obj\Debug\net8.0\ref\TourBookingWeb.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\nlog.config
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\appsettings.Development.json
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\appsettings.json
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.staticwebassets.runtime.json
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.exe
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.deps.json
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.runtimeconfig.json
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\TourBookingWeb.pdb
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Azure.Core.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Azure.Identity.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Humanizer.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.Build.Locator.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\Mono.TextTemplating.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\NLog.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\NLog.Extensions.Logging.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.ClientModel.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.CodeDom.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.Composition.Convention.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.Composition.Hosting.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.Composition.Runtime.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.Composition.TypedParts.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.Drawing.Common.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.Formats.Asn1.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.IO.Pipelines.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.Memory.Data.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.Runtime.Caching.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.Security.Permissions.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.Text.Json.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\System.Windows.Extensions.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\X.PagedList.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\X.PagedList.EF.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.csproj.AssemblyReference.cache
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.GeneratedMSBuildEditorConfig.editorconfig
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.AssemblyInfoInputs.cache
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.AssemblyInfo.cs
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.csproj.CoreCompileInputs.cache
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.MvcApplicationPartsAssemblyInfo.cs
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.MvcApplicationPartsAssemblyInfo.cache
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.RazorAssemblyInfo.cache
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.RazorAssemblyInfo.cs
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\staticwebassets.build.json
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\staticwebassets.development.json
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.TourBookingWeb.Microsoft.AspNetCore.StaticWebAssets.props
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.build.TourBookingWeb.props
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.TourBookingWeb.props
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TourBookingWeb.props
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\staticwebassets.pack.json
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminNavbar.cshtml.rz.scp.css
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_AdminSidebar.cshtml.rz.scp.css
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_ValidationScriptsPartial.cshtml.rz.scp.css
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\scopedcss\bundle\TourBookingWeb.styles.css
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\scopedcss\projectbundle\TourBookingWeb.bundle.scp.css
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\TourBook.25370A4E.Up2Date
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\refint\TourBookingWeb.dll
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.pdb
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\TourBookingWeb.genruntimeconfig.cache
+E:\6. Đại học HKII - Năm 3\Công nghệ .Net\Cuối kì\TourBookingWeb\obj\Debug\net8.0\ref\TourBookingWeb.dll
