@@ -17,12 +17,14 @@ Hệ thống mô hình hóa đầy đủ nghiệp vụ thực tế của doanh n
 ---
 
 ## Công nghệ sử dụng
-- ASP.NET Core MVC: Xây dựng ứng dụng Web 
-- Entity Framework Core: ORM & truy vấn dữ liệu 
-- SQL Server: Lưu trữ dữ liệu 
-- Identity + JWT + OTP: Đăng nhập, phân quyền, bảo mật 
-- NLog: Ghi log toàn hệ thống
-- Razor View + Bootstrap: UI/Frontend 
+| Công nghệ | Mục đích |
+|---------|----------|
+| ASP.NET Core MVC | Xây dựng ứng dụng Web |
+| Entity Framework Core | ORM & truy vấn dữ liệu |
+| SQL Server | Lưu trữ dữ liệu |
+| Identity + JWT + OTP | Đăng nhập, phân quyền, bảo mật |
+| NLog | Ghi log toàn hệ thống |
+| Razor View + Bootstrap | UI/Frontend |
 
 ---
 
@@ -54,4 +56,3 @@ Hệ thống mô hình hóa đầy đủ nghiệp vụ thực tế của doanh n
 | TourSchedules | Ngày khởi hành + slots còn lại |
 | Bookings | Đơn đặt tour |
 | Images | Thư viện hình ảnh tour |
-
