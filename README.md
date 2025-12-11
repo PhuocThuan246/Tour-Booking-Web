@@ -22,7 +22,7 @@ Hệ thống mô hình hóa đầy đủ nghiệp vụ thực tế của doanh n
 | ASP.NET Core MVC | Xây dựng ứng dụng Web |
 | Entity Framework Core | ORM & truy vấn dữ liệu |
 | SQL Server | Lưu trữ dữ liệu |
-| Identity + JWT + OTP | Đăng nhập, phân quyền, bảo mật |
+| Identity + OTP | Đăng nhập, phân quyền, bảo mật |
 | NLog | Ghi log toàn hệ thống |
 | Razor View + Bootstrap | UI/Frontend |
 
